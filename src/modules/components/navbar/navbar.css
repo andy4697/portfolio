@@ -1,0 +1,15 @@
+.navigation-menu {
+    padding: 0; 
+}
+
+.nav-item {
+    color: #05162f;                /* The standard SLDS dark text color. */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.nav-item:hover {
+    background-color: #eef1f6; 
+}

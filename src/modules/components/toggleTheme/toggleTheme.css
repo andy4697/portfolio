@@ -1,0 +1,15 @@
+.slds-button_icon {
+    padding: 0.5rem; /* Adjust padding as needed */
+}
+
+.toggle-theme-container {
+    position: absolute; /* Position it absolutely */
+    top: 1rem; /* Adjust as needed */
+    right: 1rem; /* Adjust as needed */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.slds-button_icon-inverse {
+    background-color: transparent; /* Ensure background is transparent */
+    color: #ffffff; /* Change text color for dark theme */
+} 
