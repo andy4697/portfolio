@@ -1,0 +1,38 @@
+<template>
+    <!-- Container for the blog item -->
+    <div class="blog-item-container slds-media slds-media_center slds-p-around_medium">
+        <!-- Image on the left -->
+        <div class="slds-media__figure slds-m-right_medium">
+            <img
+                src={imageUrl}
+                alt="Blog Image"
+                style="width: 80px; height: auto;"
+            />
+        </div>
+
+        <!-- Right side: Title, "New" pill, summary, category pills -->
+        <div class="slds-media__body">
+            <div class="slds-grid slds-m-bottom_x-small">
+                <h2 class="slds-text-heading_medium slds-m-right_small">{title}</h2>
+                <template if:true={isNew}>
+                    <span class="slds-badge slds-theme_success">New</span>
+                </template>
+            </div>
+
+            <p class="slds-m-bottom_small">{summary}</p>
+
+            <!-- We apply inline styles from pillStyle on each category pill -->
+            <template for:each={categories} for:item="category">
+                <span
+                    key={category}
+                    class="slds-badge slds-m-right_x-small slds-m-bottom_x-small"
+                    style={pillStyle}
+                >
+                    {category}
+                </span>
+            </template>
+        </div>
+    </div>
+    <!-- Separator line after each blog item -->
+    <hr />
+</template>

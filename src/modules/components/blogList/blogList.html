@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-p-horizontal_medium slds-m-top_xx-large">
+        <template for:each={blogs} for:item="blog">
+            <components-blog-item
+                key={blog.id}
+                image-url={blog.imageUrl}
+                title={blog.title}
+                summary={blog.summary}
+                is-new={blog.isNew}
+                categories={blog.categories}
+                pill-class={blog.pillClass}
+            ></components-blog-item>
+        </template>
+    </div>
+</template>

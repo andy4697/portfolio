@@ -1,0 +1,27 @@
+/* Hover effect: subtle border + background 
+.blog-item-container:hover {
+    border: 1px solid #d8dde6;  Light gray border 
+    border-radius: 4px;
+  
+    background-color: #ffffff; Light SLDS-like background 
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+/* Pill styles for each color variant */
+
+/* blogItem.css */
+
+.blog-item-container {
+    width: 100%;           /* Let it stretch full width of its parent */
+    background-color: #fff; /* Ensures the shadow is visible if your page is white */
+    margin-bottom: 1rem;   /* Space below so the shadow is visible on all sides */
+    border-radius: 4px;    /* Slight rounding for a modern look (optional) */
+    transition: box-shadow 0.2s ease-in-out;
+    
+}
+
+/* On hover, show a box shadow (no border). */
+.blog-item-container:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
