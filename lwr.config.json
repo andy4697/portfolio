@@ -38,10 +38,10 @@
             }
         },
         {
-            "id": "experience",
-            "path": "/experience",
+            "id": "work",
+            "path": "/work",
             "layoutTemplate": "$layoutsDir/main.html",
-            "rootComponent": "pages/experience",
+            "rootComponent": "pages/work",
             "bootstrap": {
                 "syntheticShadow": true
             }

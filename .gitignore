@@ -1,3 +1,6 @@
+#lwr cache files
+__lwr_cache__
+
 # Logs
 logs
 *.log
