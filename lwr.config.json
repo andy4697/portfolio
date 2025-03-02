@@ -47,15 +47,6 @@
             }
         },
         {
-            "id": "resume",
-            "path": "/resume",
-            "layoutTemplate": "$layoutsDir/main.html",
-            "rootComponent": "pages/resume",
-            "bootstrap": {
-                "syntheticShadow": true
-            }
-        },
-        {
             "id": "contact",
             "path": "/contact",
             "layoutTemplate": "$layoutsDir/main.html",

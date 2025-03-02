@@ -16,9 +16,11 @@
     "copyslds": "node ./scripts/copy-slds.mjs"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.9",
     "font-awesome": "^4.7.0",
     "lwc": "latest",
-    "lwr": "0.16.11"
+    "lwr": "0.16.11",
+    "tailwindcss": "^4.0.9"
   },
   "engines": {
     "node": ">=18.0.0"

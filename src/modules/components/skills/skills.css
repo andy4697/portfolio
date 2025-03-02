@@ -1,0 +1,20 @@
+.skills-icons-container {
+    background-color: #000; /* black background */
+    color: #fff;           /* white text */
+    border-radius: 4px;
+}
+
+.custom-pill {
+    background: #2d2d2d; /* dark gray */
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Make sure the icons and text align nicely */
+.slds-pill__icon_container {
+    margin-right: 0.5rem;
+}
+
+.slds-pill__icon_container i {
+    font-size: 1.25rem; /* Adjust icon size as needed */
+}
