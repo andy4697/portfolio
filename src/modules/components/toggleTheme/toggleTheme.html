@@ -1,10 +1,16 @@
 <template>
-    <div class="toggle-theme-container">
-        <button class="slds-button slds-button_icon" title="Toggle Theme" onclick={toggleTheme}>
-            <span class="slds-button__icon slds-button__icon_right">
-                <i class={iconClass} aria-hidden="true"></i>
-            </span>
-            <span class="slds-assistive-text">Toggle Theme</span>
+    <div class="theme-toggle-container">
+        <button 
+            class="theme-toggle-button" 
+            onclick={toggleTheme} 
+            title={buttonTitle}
+            aria-label={buttonTitle}>
+            <template if:true={isDarkMode}>
+                <span class="material-icons">light_mode</span>
+            </template>
+            <template if:false={isDarkMode}>
+                <span class="material-icons">dark_mode</span>
+            </template>
         </button>
     </div>
-</template> 
+</template>

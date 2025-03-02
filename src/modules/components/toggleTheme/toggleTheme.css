@@ -1,15 +1,29 @@
-.slds-button_icon {
-    padding: 0.5rem; /* Adjust padding as needed */
+.theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
 }
 
-.toggle-theme-container {
-    position: absolute; /* Position it absolutely */
-    top: 1rem; /* Adjust as needed */
-    right: 1rem; /* Adjust as needed */
-    z-index: 10; /* Ensure it appears above other elements */
+.theme-toggle-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
-.slds-button_icon-inverse {
-    background-color: transparent; /* Ensure background is transparent */
-    color: #ffffff; /* Change text color for dark theme */
-} 
+.theme-toggle-button:hover {
+    background-color: var(--toggle-hover-color, rgba(0, 0, 0, 0.1));
+}
+
+.material-icons {
+    font-size: 1.5rem;
+    color: var(--toggle-icon-color, #706e6b);
+}
+
+/* Dark mode styles will be applied via CSS variables in global.css */
