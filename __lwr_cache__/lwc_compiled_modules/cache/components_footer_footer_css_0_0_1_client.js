@@ -1,1 +1,1 @@
-/* _implicit_dependency_ */ export default void 0
+export default undefined

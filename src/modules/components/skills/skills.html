@@ -1,19 +1,16 @@
 <template>
-    <div class="slds-p-around_medium skills-icons-container">
-        <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-grid_pull-padded">
-            <template for:each={technologies} for:item="tech">
-                <div key={tech.id} class="slds-col slds-p-around_small">
-                    <!-- SLDS pill container -->
-                    <span class="slds-pill slds-pill_link slds-m-around_xx-small custom-pill">
-                        <!-- Icon -->
-                        <span class="slds-pill__icon_container">
-                            <i class={tech.iconClass} aria-hidden="true"></i>
-                        </span>
-                        <!-- Label -->
-                        <span class="slds-pill__label">{tech.name}</span>
-                    </span>
-                </div>
-            </template>
+    <div class="slds-scope">
+        <div class="skills-container slds-p-around_large">
+            <div class="slds-text-heading_large slds-m-bottom_large">Skills</div>
+            
+            <div class="skills-grid">
+                <template for:each={skills} for:item="skill">
+                    <div key={skill.id} class="skill-item">
+                        <i class={skill.icon}></i>
+                        <span class="skill-name">{skill.name}</span>
+                    </div>
+                </template>
+            </div>
         </div>
     </div>
 </template>

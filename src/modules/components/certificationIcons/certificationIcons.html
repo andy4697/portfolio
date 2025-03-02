@@ -1,0 +1,33 @@
+<template>
+    <div class="certification-section">
+        <h2 class="certification-heading">My Certifications</h2>
+        
+        <div class="certification-icons">
+            <template for:each={certifications} for:item="cert">
+                <div key={cert.id} class="certification-icon" data-id={cert.id} onclick={handleIconClick}>
+                    <img src={cert.iconUrl} alt={cert.name} />
+                    <span class="certification-name">{cert.shortName}</span>
+                </div>
+            </template>
+        </div>
+        
+        <template if:true={selectedCertification}>
+            <div class="certification-details">
+                <div class="certification-details-header">
+                    <div class="certification-info">
+                        <img src={selectedCertification.iconUrl} alt={selectedCertification.name} class="certification-detail-icon" />
+                        <div class="certification-text">
+                            <h3>{selectedCertification.name}</h3>
+                            <p>Issued: {selectedCertification.issueDate}</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick={handleCloseClick}>×</button>
+                </div>
+                
+                <div class="certification-image">
+                    <img src={selectedCertification.certificateUrl} alt={selectedCertification.name} />
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

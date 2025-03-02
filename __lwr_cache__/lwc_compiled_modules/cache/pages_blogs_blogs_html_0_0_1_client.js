@@ -5,6 +5,7 @@ import {freezeTemplate, parseFragment, registerTemplate} from "lwc";
 const $fragment1 = parseFragment`<h1 class="slds-text-heading_large${0}"${2}>Blogs</h1>`;
 const stc0 = {
   classMap: {
+    "blog-data": true,
     "slds-p-around_medium": true,
     "slds-m-top_xx-large": true
   },

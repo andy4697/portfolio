@@ -1,20 +1,11 @@
-import _implicitStylesheets from "./footer.css";
-import _implicitScopedStylesheets from "./footer.scoped.css?scoped=true";
-import {freezeTemplate, parseFragment, registerTemplate} from "lwc";
-const $fragment1 = parseFragment`<footer class="slds-p-around_medium slds-text-align_center slds-m-top_large${0}"${2}>© 2025 Anudeep Appikatla  | </footer>`;
-function tmpl($api, $cmp, $slotset, $ctx) {
-  const {st: api_static_fragment} = $api;
-  return [api_static_fragment($fragment1, 1)];
+import _tmpl from "./footer.html";
+import { LightningElement, registerComponent as _registerComponent } from 'lwc';
+class Footer extends LightningElement {
   /*LWC compiler v8.14.0*/
 }
-export default registerTemplate(tmpl);
-tmpl.stylesheets = [];
-tmpl.stylesheetToken = "lwc-6rvlaincsff";
-tmpl.legacyStylesheetToken = "components-footer_footer";
-if (_implicitStylesheets) {
-  tmpl.stylesheets.push.apply(tmpl.stylesheets, _implicitStylesheets);
-}
-if (_implicitScopedStylesheets) {
-  tmpl.stylesheets.push.apply(tmpl.stylesheets, _implicitScopedStylesheets);
-}
-freezeTemplate(tmpl);
+const __lwc_component_class_internal = _registerComponent(Footer, {
+  tmpl: _tmpl,
+  sel: "components-footer",
+  apiVersion: 63
+});
+export default __lwc_component_class_internal;

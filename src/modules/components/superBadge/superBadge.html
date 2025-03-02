@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-scope">
+        <div class="superbadges-container slds-p-around_large">
+            <div class="slds-text-heading_large slds-m-bottom_large">Superbadges</div>
+            
+            <div class="superbadges-grid">
+                <template for:each={superbadges} for:item="badge">
+                    <div key={badge.id} class="superbadge-item">
+                        <div class="superbadge-icon">
+                            <img src={badge.iconPath} alt={badge.name} />
+                        </div>
+                        <div class="superbadge-name">{badge.name}</div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
+

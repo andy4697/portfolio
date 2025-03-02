@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="$assetsDir/globalStyle.css"/> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <!-- <link rel="stylesheet" href="$assetsDir/slds.css"/>  -->
     <link rel="stylesheet" href="$assetsDir/styles/salesforce-lightning-design-system.css"/>
     <link rel="stylesheet" href="$assetsDir/global.css"/>
-    <link href="$assetsDir/output.css" rel="stylesheet">
     <title>Anudeep Appikatla</title>
 </head>
 <body>
@@ -18,7 +15,9 @@
         <div class="content-area">
             <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
             {{{body}}}
+            <components-footer></components-footer>
         </div>
+        
     </div>
     {{{lwr_resources}}}
 </body>

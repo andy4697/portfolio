@@ -1,20 +1,76 @@
-.skills-icons-container {
-    background-color: #000; /* black background */
-    color: #fff;           /* white text */
+.skills-container {
+    max-width: 800px;
+    background-color: #fff;
+    padding: 2rem;
     border-radius: 4px;
 }
 
-.custom-pill {
-    background: #2d2d2d; /* dark gray */
-    color: #fff;
-    border-radius: 4px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
 }
 
-/* Make sure the icons and text align nicely */
-.slds-pill__icon_container {
-    margin-right: 0.5rem;
+.skill-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.slds-pill__icon_container i {
-    font-size: 1.25rem; /* Adjust icon size as needed */
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item i {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.skill-name {
+    font-weight: 500;
+}
+
+/* Icon colors */
+.fa-html5 {
+    color: #e34c26;
+}
+
+.fa-css3-alt, .fa-css3 {
+    color: #264de4;
+}
+
+.fa-js {
+    color: #f7df1e;
+}
+
+.fa-react {
+    color: #61dafb;
+}
+
+.fa-node-js {
+    color: #339933;
+}
+
+.fa-database {
+    color: #336791;
+}
+
+.fa-git-alt {
+    color: #f05032;
+}
+
+.fa-github {
+    color: #333;
+}
+
+.fa-java {
+    color: #007396;
+}
+
+.fa-linux {
+    color: #333;
 }
