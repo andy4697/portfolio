@@ -1,8 +1,45 @@
 <template>
-    <div class="slds-context-bar slds-grid slds-grid_vertical sidebar-container">
-        
+    <!-- Mobile Header (only visible on mobile) -->
+    <div class="mobile-header">
+        <button class="menu-toggle" onclick={toggleMenu} aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 class="site-title">Anudeep Appikatla</h1>
+        <div class="mobile-theme-toggle">
+            <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class={mobileMenuClass} onclick={handleBackdropClick}>
+        <div class="sidebar-content mobile-sidebar" onclick={stopPropagation}>
+            <!-- Profile Section -->
+            <div class="profile-section" onclick={closeMenuIfNotExcluded}>
+                <div class="profile-image-container">
+                    <img
+                        src="/public/assets/profile.jpg"
+                        alt="Profile"
+                        class="profile-image"
+                    />
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="navigation-area exclude-from-close">
+                <components-navbar></components-navbar>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links-wrapper exclude-from-close">
+                <components-social-links></components-social-links>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Desktop Sidebar (always visible on desktop) -->
+    <div class="desktop-sidebar">
         <!-- Profile Section -->
-        <div class="slds-col slds-p-around_medium profile-section">
+        <div class="profile-section">
             <div class="profile-image-container">
                 <img
                     src="/public/assets/profile.jpg"
@@ -13,12 +50,12 @@
         </div>
 
         <!-- Navigation Menu -->
-        <div class="slds-col navigation-area">
+        <div class="navigation-area">
             <components-navbar></components-navbar>
         </div>
 
-        <!-- Social Media Links (pinned at bottom by margin-top: auto) -->
-        <div class="slds-col social-links-wrapper">
+        <!-- Social Media Links -->
+        <div class="social-links-wrapper">
             <components-social-links></components-social-links>
         </div>
     </div>

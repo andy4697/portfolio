@@ -1,21 +1,142 @@
-/* Global styles - Minimal adjustments, rely on SLDS */
-
-
-.layout-container {
-    display:flex ;
-    background-color: #ffffff;
-}
-
-.content-area {
+/* Global theme variables using SLDS colors */
+:root {
+    /* Light theme (default) */
+    --background: #f3f3f3;
+    --foreground: #16325c;
+    --card: #ffffff;
+    --card-foreground: #16325c;
+    --popover: #ffffff;
+    --popover-foreground: #16325c;
+    --primary: #0070d2;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f6f9;
+    --secondary-foreground: #16325c;
+    --muted: #f4f6f9;
+    --muted-foreground: #54698d;
+    --accent: #e6f2fa;
+    --accent-foreground: #16325c;
+    --destructive: #c23934;
+    --destructive-foreground: #ffffff;
+    --border: #d8dde6;
+    --input: #d8dde6;
+    --ring: #0070d2;
+    --radius: 0.25rem;
+    
+    /* Chart colors */
+    --chart-1: #1589ee;
+    --chart-2: #ff9a3c;
+    --chart-3: #4bca81;
+    --chart-4: #f5675b;
+    --chart-5: #6b6ecf;
+    
+    /* Derived variables for components */
+    --text-color: var(--foreground);
+    --background-color: var(--card);
+    --page-background: var(--background);
+    --border-color: var(--border);
+    --primary-color: var(--primary);
+    --secondary-color: var(--accent);
+    --button-color: var(--primary);
+    --button-text-color: var(--primary-foreground);
+    --toggle-hover-color: rgba(0, 0, 0, 0.05);
+    --toggle-icon-color: var(--muted-foreground);
+    
+    /* Timeline specific colors */
+    --timeline-dot-color: var(--primary);
+    --timeline-line-color: var(--primary);
+    
+    /* Z-index values */
+    --z-index-sidebar: 100;
+    --z-index-mobile-header: 1000;
+    --z-index-theme-toggle: 1010;
+  }
+  
+  [data-theme="dark"] {
+    /* Dark theme */
+    --background: #1a1a1a;
+    --foreground: #f3f3f3;
+    --card: #2a2a2a;
+    --card-foreground: #f3f3f3;
+    --popover: #2a2a2a;
+    --popover-foreground: #f3f3f3;
+    --primary: #4da1ff;
+    --primary-foreground: #1a1a1a;
+    --secondary: #3a3a3a;
+    --secondary-foreground: #f3f3f3;
+    --muted: #3a3a3a;
+    --muted-foreground: #b0b0b0;
+    --accent: #2c4f7c;
+    --accent-foreground: #f3f3f3;
+    --destructive: #ff5c5c;
+    --destructive-foreground: #f3f3f3;
+    --border: #444857;
+    --input: #444857;
+    --ring: #4da1ff;
+    
+    /* Chart colors for dark theme */
+    --chart-1: #5c9aff;
+    --chart-2: #ffb366;
+    --chart-3: #6dd99b;
+    --chart-4: #ff8a80;
+    --chart-5: #9e9eff;
+    
+    /* Derived variables for components */
+    --text-color: var(--foreground);
+    --background-color: var(--card);
+    --page-background: var(--background);
+    --border-color: var(--border);
+    --primary-color: var(--primary);
+    --secondary-color: var(--accent);
+    --button-color: var(--primary);
+    --button-text-color: var(--primary-foreground);
+    --toggle-hover-color: rgba(255, 255, 255, 0.1);
+    --toggle-icon-color: var(--muted-foreground);
+    
+    /* Timeline specific colors */
+    --timeline-dot-color: var(--primary);
+    --timeline-line-color: var(--primary);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    background-color: var(--page-background);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .layout-container {
+    display: flex;
+  }
+  
+  .content-area {
     flex: 1;
-    margin-left: 17rem; /*  Sidebar width in rem */
-    padding: 1rem; /* SLDS spacing */
+    margin-left: 250px; /* Match sidebar width */
+    padding: 2rem;
     min-height: 100vh;
-    background-color: #ffffff;
-}
-
-@media (max-width: 48rem) { /* SLDS small breakpoint */
+    background-color: var(--page-background);
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Remove any horizontal lines */
+  hr, 
+  .slds-border_top, 
+  .slds-border-top, 
+  [class*="slds-border_top"], 
+  [class*="slds-border-top"],
+  .slds-border_bottom, 
+  .slds-border-bottom, 
+  [class*="slds-border_bottom"], 
+  [class*="slds-border-bottom"] {
+    border: none !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .content-area {
-        margin-left: 3rem; /* Reduce sidebar margin on small screens */
+      margin-left: 0;
+      padding-top: 60px; /* Add space for the fixed mobile header */
     }
-}
+  }

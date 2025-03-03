@@ -11,14 +11,14 @@
     <title>Anudeep Appikatla</title>
 </head>
 <body>
+    <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
+    
     <div class="layout-container">
         <components-sidebar></components-sidebar>
         <div class="content-area">
-            <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
             {{{body}}}
             <components-footer></components-footer>
         </div>
-        
     </div>
     {{{lwr_resources}}}
 </body>

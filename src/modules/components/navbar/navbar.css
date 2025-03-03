@@ -1,15 +1,24 @@
 .navigation-menu {
-    padding: 0; 
-}
-
-.nav-item {
-    color: #05162f;                /* The standard SLDS dark text color. */
+    padding: 0;
+  }
+  
+  .nav-item {
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     display: block;
-}
-
-.nav-item:hover {
-    background-color: #eef1f6; 
-}
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+  }
+  
+  .nav-item:hover {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+  }
+  
+  .nav-item.slds-is-active {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    font-weight: 500;
+  }

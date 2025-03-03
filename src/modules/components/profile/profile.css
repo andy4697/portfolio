@@ -1,6 +1,8 @@
 .profile-container {
     max-width: 800px;
-    background-color: #fff;
+    background-color: var(--card);
+    color: var(--card-foreground);
     padding: 2rem;
-    border-radius: 4px;
-}
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }

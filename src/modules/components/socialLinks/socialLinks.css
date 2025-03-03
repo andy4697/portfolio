@@ -1,18 +1,17 @@
 .social-links {
-    margin: 0; 
-    padding: 3px; 
+    margin: 0;
+    padding: 3px;
     position: absolute;
-    bottom :0
-}
-
-.social-icon {
+    bottom: 0;
+  }
+  
+  .social-icon {
     font-size: 1.5rem;
-    color: #16325c;
-    /* Space icons out; or rely on slds-gutters from your container's classes. */
+    color: var(--muted-foreground);
     margin-right: 1rem;
     transition: color 0.2s ease;
-}
-
-.social-icon:hover {
-    color: #0070d2;
-}
+  }
+  
+  .social-icon:hover {
+    color: var(--primary);
+  }

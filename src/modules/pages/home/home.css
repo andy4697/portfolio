@@ -2,65 +2,83 @@
 .slds-box img {
     max-width: 100%;
     height: auto;
-}
-
-/* Remove default border if needed; 
-   but we’ll explicitly define our own border below. */
-.slds-box {
+  }
+  
+  /* Remove default border if needed */
+  .slds-box {
     border: none;
-}
-
-/* Project & Blog Card styling */
-.project-card,
-.blog-card {
-    border: 1px solid #d8dde6;       /* Light gray border */
-    border-radius: 0.5rem;           /* Rounded corners */
-    background-color: #ffffff;       /* White background */
-    padding: 1rem;                   /* Consistent padding */
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-/* Hover effect for cards */
-.project-card:hover,
-.blog-card:hover {
+  }
+  
+  /* Project & Blog Card styling */
+  .project-card,
+  .blog-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--card);
+    color: var(--card-foreground);
+    padding: 1rem;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Hover effect for cards */
+  .project-card:hover,
+  .blog-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Pills styling */
-.pill-custom {
-    background-color: #ffffff;       /* Light neutral background */
+  }
+  
+  [data-theme="dark"] .project-card:hover,
+  [data-theme="dark"] .blog-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Pills styling */
+  .pill-custom {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
     border-radius: 15px;
-    padding: 0.25rem 0.75rem;        /* Vertical/Horizontal spacing */
-    margin-right: 0.5rem;            /* Spacing between pills horizontally */
-    margin-bottom: 0.5rem;           /* If pills wrap, add vertical spacing */
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     display: inline-block;
-    font-size: 0.75rem;              /* Slightly smaller text */
-    font-weight: 500;                /* Make text a bit bolder */
-    color: purple;                     /* Dark text color */
+    font-size: 0.75rem;
+    font-weight: 500;
     cursor: default;
-}
-
-/* (Optional) Pill hover if you want a slight color change */
-.pill-custom:hover {
-    background-color: #E3E5EA;
-}
-
-/* Badge spacing */
-.slds-badge {
-    margin-left: 5px; /* Space between text and badge */
-}
-
-/* Button spacing (if you have multiple buttons side by side) */
-.slds-button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Pill hover if you want a slight color change */
+  .pill-custom:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+  
+  /* Badge spacing */
+  .slds-badge {
+    margin-left: 5px;
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Button spacing (if you have multiple buttons side by side) */
+  .slds-button {
     margin-right: 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .slds-button:hover {
+    background-color: var(--primary);
+    filter: brightness(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .slds-grid {
-        flex-direction: column; /* Stack items on smaller screens */
+      flex-direction: column; /* Stack items on smaller screens */
     }
     .slds-media__figure {
-        margin-bottom: 1rem;    /* Put the image on top if it collapses to vertical */
+      margin-bottom: 1rem; /* Put the image on top if it collapses to vertical */
     }
-}
+  }
