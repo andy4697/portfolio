@@ -1,15 +1,23 @@
 <template>
-    <div class="slds-p-horizontal_medium slds-m-top_xx-large">
-        <template for:each={blogs} for:item="blog">
-            <components-blog-item
-                key={blog.id}
-                image-url={blog.imageUrl}
-                title={blog.title}
-                summary={blog.summary}
-                is-new={blog.isNew}
-                categories={blog.categories}
-                pill-class={blog.pillClass}
-            ></components-blog-item>
-        </template>
-    </div>
+  <div class="blogs-list-container">
+      <template for:each={displayedBlogs} for:item="blog">
+          <div key={blog.id} class="blog-item-wrapper">
+              <components-blog-item
+                  image-url={blog.imageUrl}
+                  title={blog.title}
+                  summary={blog.summary}
+                  is-new={blog.isNew}
+                  categories={blog.categories}
+                  pill-color={blog.pillColor}
+                  slug={blog.slug}
+              ></components-blog-item>
+          </div>
+      </template>
+  </div>
+  
+  <template if:true={isHomePage}>
+      <div class="text-center">
+          <a href="/blogs" class="view-all-button">View All Blogs</a>
+      </div>
+  </template>
 </template>

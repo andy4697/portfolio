@@ -1,142 +1,305 @@
-/* Global theme variables using SLDS colors */
+/* Global theme variables */
 :root {
-    /* Light theme (default) */
-    --background: #f3f3f3;
-    --foreground: #16325c;
-    --card: #ffffff;
-    --card-foreground: #16325c;
-    --popover: #ffffff;
-    --popover-foreground: #16325c;
-    --primary: #0070d2;
-    --primary-foreground: #ffffff;
-    --secondary: #f4f6f9;
-    --secondary-foreground: #16325c;
-    --muted: #f4f6f9;
-    --muted-foreground: #54698d;
-    --accent: #e6f2fa;
-    --accent-foreground: #16325c;
-    --destructive: #c23934;
-    --destructive-foreground: #ffffff;
-    --border: #d8dde6;
-    --input: #d8dde6;
-    --ring: #0070d2;
-    --radius: 0.25rem;
-    
-    /* Chart colors */
-    --chart-1: #1589ee;
-    --chart-2: #ff9a3c;
-    --chart-3: #4bca81;
-    --chart-4: #f5675b;
-    --chart-5: #6b6ecf;
-    
-    /* Derived variables for components */
-    --text-color: var(--foreground);
-    --background-color: var(--card);
-    --page-background: var(--background);
-    --border-color: var(--border);
-    --primary-color: var(--primary);
-    --secondary-color: var(--accent);
-    --button-color: var(--primary);
-    --button-text-color: var(--primary-foreground);
-    --toggle-hover-color: rgba(0, 0, 0, 0.05);
-    --toggle-icon-color: var(--muted-foreground);
-    
-    /* Timeline specific colors */
-    --timeline-dot-color: var(--primary);
-    --timeline-line-color: var(--primary);
-    
-    /* Z-index values */
-    --z-index-sidebar: 100;
-    --z-index-mobile-header: 1000;
-    --z-index-theme-toggle: 1010;
-  }
+  /* Base colors */
+  --text-color: #333;
+  --background-color: #fff;
+  --card-background: #fff;
+  --border-color: #d8dde6;
+  --page-background: #fff;
   
-  [data-theme="dark"] {
-    /* Dark theme */
-    --background: #1a1a1a;
-    --foreground: #f3f3f3;
-    --card: #2a2a2a;
-    --card-foreground: #f3f3f3;
-    --popover: #2a2a2a;
-    --popover-foreground: #f3f3f3;
-    --primary: #4da1ff;
-    --primary-foreground: #1a1a1a;
-    --secondary: #3a3a3a;
-    --secondary-foreground: #f3f3f3;
-    --muted: #3a3a3a;
-    --muted-foreground: #b0b0b0;
-    --accent: #2c4f7c;
-    --accent-foreground: #f3f3f3;
-    --destructive: #ff5c5c;
-    --destructive-foreground: #f3f3f3;
-    --border: #444857;
-    --input: #444857;
-    --ring: #4da1ff;
-    
-    /* Chart colors for dark theme */
-    --chart-1: #5c9aff;
-    --chart-2: #ffb366;
-    --chart-3: #6dd99b;
-    --chart-4: #ff8a80;
-    --chart-5: #9e9eff;
-    
-    /* Derived variables for components */
-    --text-color: var(--foreground);
-    --background-color: var(--card);
-    --page-background: var(--background);
-    --border-color: var(--border);
-    --primary-color: var(--primary);
-    --secondary-color: var(--accent);
-    --button-color: var(--primary);
-    --button-text-color: var(--primary-foreground);
-    --toggle-hover-color: rgba(255, 255, 255, 0.1);
-    --toggle-icon-color: var(--muted-foreground);
-    
-    /* Timeline specific colors */
-    --timeline-dot-color: var(--primary);
-    --timeline-line-color: var(--primary);
-  }
+  /* Brand colors */
+  --primary-color: #0070d2;
+  --secondary-color: #4285f4;
   
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Salesforce Sans', Arial, sans-serif;
-    background-color: var(--page-background);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+  /* Timeline colors */
+  --timeline-dot-color: #4285f4;
+  --timeline-line-color: #4285f4;
   
-  .layout-container {
-    display: flex;
-  }
+  /* Button colors */
+  --button-color: #4285f4;
+  --button-text-color: #fff;
   
+  /* Theme toggle */
+  --toggle-hover-color: rgba(0, 0, 0, 0.1);
+  --toggle-icon-color: #706e6b;
+  
+  /* Z-index layers */
+  --z-index-sidebar: 100;
+  --z-index-mobile-header: 1000;
+  --z-index-theme-toggle: 1010;
+
+  /* Border radius */
+  --radius: 8px;
+
+   /* Code block colors - light theme */
+   --code-bg: #f5f5f5;
+   --pre-bg: #f5f5f5;
+   --code-color: #333;
+  
+  /* Navigation specific colors */
+  --nav-text-color: #16325c;
+  --nav-hover-bg: #eef1f6;
+  --nav-hover-text: #16325c;
+  --nav-active-bg: #eef5ff;
+  --nav-active-text: #16325c;
+  --nav-active-border: #0070d2;
+
+  /* Pill color variables - light theme */
+  --pill-blue-bg: rgba(66, 133, 244, 0.15);
+  --pill-blue-color: #4285f4;
+  --pill-blue-border: #4285f4;
+  
+  --pill-green-bg: rgba(52, 168, 83, 0.15);
+  --pill-green-color: #34a853;
+  --pill-green-border: #34a853;
+  
+  --pill-orange-bg: rgba(251, 140, 0, 0.15);
+  --pill-orange-color: #fb8c00;
+  --pill-orange-border: #fb8c00;
+  
+  --pill-purple-bg: rgba(103, 58, 183, 0.15);
+  --pill-purple-color: #673ab7;
+  --pill-purple-border: #673ab7;
+  
+  --pill-pink-bg: rgba(233, 30, 99, 0.15);
+  --pill-pink-color: #e91e63;
+  --pill-pink-border: #e91e63;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  /* Base colors */
+  --text-color: white;
+  --background-color: #1a1a1a;
+  --card-background: black;
+  --border-color: #444857;
+  --page-background: #1a1a1a;
+  
+  /* Brand colors */
+  --primary-color: #4da1ff;
+  --secondary-color: #5c9aff;
+  
+  /* Timeline colors */
+  --timeline-dot-color: #5c9aff;
+  --timeline-line-color: #5c9aff;
+  
+  /* Button colors */
+  --button-color: #5c9aff;
+  --button-text-color: #fff;
+  
+  /* Theme toggle */
+  --toggle-hover-color: rgba(255, 255, 255, 0.1);
+  --toggle-icon-color: #f3f3f3;
+
+  /* Border radius */
+  --radius: 8px;
+
+  /* Code block colors - dark theme */
+  --code-bg: #2c2c2c;
+  --pre-bg: #2c2c2c;
+  --code-color: #e0e0e0;
+  
+  /* Navigation specific colors for dark theme */
+  --nav-text-color: #e0e0e0;
+  --nav-hover-bg: #2c2c2c;
+  --nav-hover-text: #ffffff;
+  --nav-active-bg: #2c2c2c;
+  --nav-active-text: #ffffff;
+  --nav-active-border: #4da1ff;
+
+  /* Pill color variables - dark theme */
+  --pill-blue-bg: rgba(77, 161, 255, 0.2);
+  --pill-blue-color: #4da1ff;
+  --pill-blue-border: #4da1ff;
+  
+  --pill-green-bg: rgba(75, 211, 105, 0.2);
+  --pill-green-color: #4bd369;
+  --pill-green-border: #4bd369;
+  
+  --pill-orange-bg: rgba(255, 171, 64, 0.2);
+  --pill-orange-color: #ffab40;
+  --pill-orange-border: #ffab40;
+  
+  --pill-purple-bg: rgba(149, 117, 205, 0.2);
+  --pill-purple-color: #9575cd;
+  --pill-purple-border: #9575cd;
+  
+  --pill-pink-bg: rgba(255, 82, 136, 0.2);
+  --pill-pink-color: #ff5288;
+  --pill-pink-border: #ff5288;
+}
+
+html {
+  overscroll-behavior: none;
+  background-color: var(--page-background);
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Salesforce Sans', Arial, sans-serif;
+  background-color: var(--page-background);
+  color: var(--text-color);
+  overscroll-behavior: none;
+}
+
+/* Layout structure */
+.layout-container {
+  display: flex;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 250px; /* Match sidebar width */
+  padding: 2rem 2rem 0 2rem;
+  min-height: 100vh;
+  background-color: var(--page-background);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* This ensures the main content takes up all available space */
+.content-area > *:not(components-footer) {
+  flex: 1 0 auto;
+  margin-bottom: 2rem;
+}
+
+/* Navigation styles */
+.custom-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--nav-text-color);
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.custom-nav-link:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}
+
+.custom-nav-link[aria-current="page"] {
+  background-color: var(--nav-active-bg);
+  color: var(--nav-active-text);
+  border-left: 3px solid var(--nav-active-border);
+}
+
+/* Remove any horizontal lines */
+hr, 
+.slds-border_top, 
+.slds-border-top, 
+[class*="slds-border_top"], 
+[class*="slds-border-top"],
+.slds-border_bottom, 
+.slds-border-bottom, 
+[class*="slds-border_bottom"], 
+[class*="slds-border-bottom"] {
+  border: none !important;
+}
+
+/* Social links styling */
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--nav-text-color);
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Common button styles */
+.view-all-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease, filter 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.view-all-button:hover {
+  filter: brightness(1.1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .content-area {
-    flex: 1;
-    margin-left: 250px; /* Match sidebar width */
-    padding: 2rem;
-    min-height: 100vh;
-    background-color: var(--page-background);
-    position: relative;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Remove any horizontal lines */
-  hr, 
-  .slds-border_top, 
-  .slds-border-top, 
-  [class*="slds-border_top"], 
-  [class*="slds-border-top"],
-  .slds-border_bottom, 
-  .slds-border-bottom, 
-  [class*="slds-border_bottom"], 
-  [class*="slds-border-bottom"] {
-    border: none !important;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .content-area {
       margin-left: 0;
       padding-top: 60px; /* Add space for the fixed mobile header */
-    }
   }
+  
+  .custom-nav-link {
+      padding: 1rem;
+  }
+}
+
+
+/* Card styling */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

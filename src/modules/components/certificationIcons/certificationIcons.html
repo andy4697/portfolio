@@ -1,31 +1,40 @@
 <template>
     <div class="certification-section">
-        <h2 class="certification-heading">My Certifications</h2>
+        <h2 class="certification-heading">Certifications</h2>
         
+        <!-- Certification Icons Grid -->
         <div class="certification-icons">
             <template for:each={certifications} for:item="cert">
-                <div key={cert.id} class="certification-icon" data-id={cert.id} onclick={handleIconClick}>
+                <div key={cert.id} class="certification-icon" onclick={handleIconClick} data-id={cert.id}>
                     <img src={cert.iconUrl} alt={cert.name} />
-                    <span class="certification-name">{cert.shortName}</span>
+                    <span class="certification-name">{cert.name}</span>
                 </div>
             </template>
         </div>
-        
-        <template if:true={selectedCertification}>
-            <div class="certification-details">
-                <div class="certification-details-header">
-                    <div class="certification-info">
-                        <img src={selectedCertification.iconUrl} alt={selectedCertification.name} class="certification-detail-icon" />
-                        <div class="certification-text">
-                            <h3>{selectedCertification.name}</h3>
-                            <p>Issued: {selectedCertification.issueDate}</p>
+
+        <!-- Certificate Modal (Both Desktop and Mobile) -->
+        <template if:true={showModal}>
+            <div class="modal-overlay" onclick={handleModalOverlayClick}>
+                <div class="modal-content" onclick={handleModalContentClick}>
+                    <div class="modal-header">
+                        <div class="certification-info">
+                            <img src={selectedCertification.iconUrl} 
+                                 alt={selectedCertification.name} 
+                                 class="certification-detail-icon" />
+                            <div class="certification-text">
+                                <h3>{selectedCertification.name}</h3>
+                                <p>Issued: {selectedCertification.issueDate}</p>
+                            </div>
                         </div>
+                        <button class="close-button" onclick={handleCloseClick}>
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <button class="close-button" onclick={handleCloseClick}>×</button>
-                </div>
-                
-                <div class="certification-image">
-                    <img src={selectedCertification.certificateUrl} alt={selectedCertification.name} />
+                    <div class="modal-body">
+                        <img src={selectedCertification.certificateUrl} 
+                             alt={selectedCertification.name} 
+                             class="certificate-image" />
+                    </div>
                 </div>
             </div>
         </template>

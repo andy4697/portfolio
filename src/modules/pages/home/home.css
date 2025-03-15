@@ -1,84 +1,79 @@
-/* Ensure images are responsive inside cards */
-.slds-box img {
-    max-width: 100%;
-    height: auto;
+/* Main container styling */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text-color);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Intro section styling */
+.intro-section {
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+/* Section container styling */
+.section-container {
+  margin-bottom: 3rem;
+}
+
+/* Section header with title and view all link */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* View all link styling */
+.view-all-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* Button styling */
+.slds-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1.5;
+  transition: filter 0.2s ease;
+}
+
+
+.slds-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+      padding: 1.5rem;
   }
   
-  /* Remove default border if needed */
-  .slds-box {
-    border: none;
+  .section-header {
+      flex-direction: column;
+      align-items: flex-start;
   }
   
-  /* Project & Blog Card styling */
-  .project-card,
-  .blog-card {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background-color: var(--card);
-    color: var(--card-foreground);
-    padding: 1rem;
-    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  .view-all-link {
+      margin-top: 0.5rem;
   }
-  
-  /* Hover effect for cards */
-  .project-card:hover,
-  .blog-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  [data-theme="dark"] .project-card:hover,
-  [data-theme="dark"] .blog-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Pills styling */
-  .pill-custom {
-    background-color: var(--secondary);
-    color: var(--secondary-foreground);
-    border-radius: 15px;
-    padding: 0.25rem 0.75rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    cursor: default;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Pill hover if you want a slight color change */
-  .pill-custom:hover {
-    background-color: var(--accent);
-    color: var(--accent-foreground);
-  }
-  
-  /* Badge spacing */
-  .slds-badge {
-    margin-left: 5px;
-    background-color: var(--muted);
-    color: var(--muted-foreground);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Button spacing (if you have multiple buttons side by side) */
-  .slds-button {
-    margin-right: 10px;
-    background-color: var(--button-color);
-    color: var(--button-text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .slds-button:hover {
-    background-color: var(--primary);
-    filter: brightness(1.1);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .slds-grid {
-      flex-direction: column; /* Stack items on smaller screens */
-    }
-    .slds-media__figure {
-      margin-bottom: 1rem; /* Put the image on top if it collapses to vertical */
-    }
-  }
+}

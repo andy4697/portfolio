@@ -9,19 +9,34 @@ class SideBar extends LightningElement {
     return this.isMenuOpen ? 'mobile-menu-overlay mobile-menu-open' : 'mobile-menu-overlay';
   }
   connectedCallback() {
-    // Component initialization logic when connected to the DOM
+    // Add event listener for window resize to handle responsive behavior
+    window.addEventListener('resize', this.handleResize.bind(this));
+
+    // Add event listener for navigation changes
+    window.addEventListener('popstate', this.setActivePageFromUrl.bind(this));
+  }
+  disconnectedCallback() {
+    // Clean up event listeners when component is removed
+    window.removeEventListener('resize', this.handleResize.bind(this));
+    window.removeEventListener('popstate', this.setActivePageFromUrl.bind(this));
+  }
+  handleResize() {
+    // If window is resized to desktop width while mobile menu is open, close it
+    if (window.innerWidth > 768 && this.isMenuOpen) {
+      this.isMenuOpen = false;
+      document.body.style.overflow = '';
+    }
   }
   renderedCallback() {
-    // Get all navigation items after the component has rendered
-    const navItems = this.template.querySelectorAll('.nav-item');
-
-    // Add click event listener to each navigation item
-    navItems.forEach(item => {
-      item.addEventListener('click', this.handleNavItemClick.bind(this));
-    });
-
-    // Set active page on load
+    // Set active page when component is rendered
     this.setActivePageFromUrl();
+
+    // Add click event listeners to navigation links
+    const navLinks = this.template.querySelectorAll('.custom-nav-link');
+    navLinks.forEach(link => {
+      link.removeEventListener('click', this.handleNavLinkClick);
+      link.addEventListener('click', this.handleNavLinkClick.bind(this));
+    });
   }
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -52,18 +67,7 @@ class SideBar extends LightningElement {
       document.body.style.overflow = '';
     }
   }
-  handleNavItemClick(event) {
-    // Get all navigation items
-    const navItems = this.template.querySelectorAll('.nav-item');
-
-    // Remove active class from all items
-    navItems.forEach(navItem => {
-      navItem.classList.remove('slds-is-active');
-    });
-
-    // Add active class to clicked item
-    event.currentTarget.classList.add('slds-is-active');
-
+  handleNavLinkClick(event) {
     // Close mobile menu if we're on mobile
     if (window.innerWidth <= 768) {
       this.isMenuOpen = false;
@@ -72,15 +76,28 @@ class SideBar extends LightningElement {
   }
   setActivePageFromUrl() {
     const currentPath = window.location.pathname;
-    const navItems = this.template.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-      const itemPath = item.getAttribute('href');
-      if (currentPath.includes(itemPath) || currentPath.endsWith('/') && item.getAttribute('data-page') === 'home') {
-        item.classList.add('slds-is-active');
-      } else {
-        item.classList.remove('slds-is-active');
+    const navLinks = this.template.querySelectorAll('.custom-nav-link');
+    let activeFound = false;
+    navLinks.forEach(link => {
+      // Remove current attribute from all links
+      link.removeAttribute('aria-current');
+      const pageName = link.getAttribute('data-page');
+      const linkPath = link.getAttribute('href');
+
+      // Check if current path matches this link
+      if (currentPath === '/' && pageName === 'home' || currentPath !== '/' && currentPath.includes(pageName)) {
+        link.setAttribute('aria-current', 'page');
+        activeFound = true;
       }
     });
+
+    // If no active page was found, default to home
+    if (!activeFound && navLinks.length > 0) {
+      const homeLink = this.template.querySelector('[data-page="home"]');
+      if (homeLink) {
+        homeLink.setAttribute('aria-current', 'page');
+      }
+    }
   }
   handleThemeChange(event) {
     // Forward the theme change event to parent

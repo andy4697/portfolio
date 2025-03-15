@@ -1,0 +1,33 @@
+<template>
+    <div class="project-item-container">
+      <div class="project-image-container">
+        <img 
+          src={imageUrl} 
+          alt={title} 
+          class="project-image"
+        />
+      </div>
+      
+      <div class="project-content">
+        <div class="project-title">
+          {title}
+          <template if:true={isNew}>
+            <span class="new-badge">NEW</span>
+          </template>
+        </div>
+        
+        <p class="project-description">{description}</p>
+        
+        <div class="tech-pills">
+          <template for:each={formattedTechnologies} for:item="tech">
+            <span 
+              key={tech.id} 
+              class={tech.class}
+            >
+              {tech.name}
+            </span>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>

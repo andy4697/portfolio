@@ -1,0 +1,59 @@
+<template>
+    <article class="blog-article">
+        <!-- Featured Image -->
+        <div class="featured-image-container">
+            <img src={featuredImage} alt={title} class="featured-image" />
+        </div>
+
+        <!-- Header Section -->
+        <header class="blog-header">
+            <h1 class="slds-text-heading_large">{title}</h1>
+            
+            <!-- Meta Information -->
+            <div class="blog-meta">
+                <div class="meta-row">
+                    <div class="author-info">
+                        <div class="author-image-container">
+                            <img src={authorImage} alt={author} class="author-image" />
+                        </div>
+                        <div class="author-details">
+                            <span class="author-name">{author}</span>
+                            <div class="social-links">
+                                <template if:true={authorTwitter}>
+                                    <a href={twitterUrl} target="_blank" class="social-link twitter-link">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </template>
+                                <template if:true={authorLinkedIn}>
+                                    <a href={linkedInUrl} target="_blank" class="social-link linkedin-link">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publish-info">
+                        <span>{formattedDate}</span>
+                        <span class="slds-m-left_small">· {readingTime} min read</span>
+                    </div>
+                </div>
+                
+                <!-- Categories -->
+                <div class="categories">
+                    <template for:each={formattedCategories} for:item="category">
+                        <span key={category.id} class={category.class}>
+                            {category.name}
+                        </span>
+                    </template>
+                </div>
+            </div>
+        </header>
+
+        <div class="section-divider"></div>
+
+        <!-- Content -->
+        <div class="blog-content">
+            <div class="markdown-content" lwc:dom="manual"></div>
+        </div>
+    </article>
+</template>

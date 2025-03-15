@@ -1,0 +1,21 @@
+<template>
+    <div class="projects-list-container">
+      <template for:each={displayedProjects} for:item="project">
+        <components-project-item
+          key={project.id}
+          image-url={project.imageUrl}
+          title={project.title}
+          description={project.description}
+          is-new={project.isNew}
+          technologies={project.technologies}
+          pill-color={project.pillColor}
+        ></components-project-item>
+      </template>
+    </div>
+    
+    <template if:true={isHomePage}>
+      <div class="text-center">
+        <a href="/projects" class="view-all-button">View All Projects</a>
+      </div>
+    </template>
+  </template>

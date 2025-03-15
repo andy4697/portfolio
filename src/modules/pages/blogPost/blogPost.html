@@ -1,0 +1,22 @@
+<template>
+    <template if:true={error}>
+        <div class="error-message">
+            {error}
+        </div>
+    </template>
+
+    <template if:false={error}>
+        <components-blog-content
+            title={blogData.title}
+            content={blogData.content}
+            author={blogData.author}
+            author-image={blogData.authorImage}
+            author-twitter={blogData.authorTwitter}
+            author-linked-in={blogData.authorLinkedIn}
+            publish-date={blogData.publishDate}
+            categories={blogData.categories}
+            featured-image={blogData.featuredImage}
+            reading-time={blogData.readingTime}>
+        </components-blog-content>
+    </template>
+</template>

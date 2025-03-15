@@ -1,31 +1,48 @@
 import { registerDecorators as _registerDecorators, LightningElement, registerComponent as _registerComponent } from "lwc";
 import _tmpl from "./blogItem.html";
-const PILL_STYLES = {
-  'pill-purple': 'background-color: #fff; color: purple; border: 1px solid #d8dde6;',
-  'pill-orange': 'background-color: #fff; color: orange; border: 1px solid #d8dde6;',
-  'pill-pink': 'background-color: #fff; color: darkred; border: 1px solid #d8dde6;'
-  // Add more mappings as needed
-};
 class BlogItem extends LightningElement {
   constructor(...args) {
     super(...args);
     this.imageUrl = void 0;
-    // e.g. '/assets/blog.jpg'
     this.title = void 0;
-    // Blog title
     this.summary = void 0;
-    // Summary text
     this.isNew = void 0;
-    // Whether to show the "New" pill
     this.categories = [];
-    // Array of category strings
-    this.pillClass = void 0;
+    this.pillColor = 'blue';
+    this.slug = void 0;
   }
-  // Custom CSS class key for styling the pills
+  navigateToBlog() {
+    // Add debugging
+    console.log('Blog clicked:', {
+      title: this.title,
+      slug: this.slug
+    });
+    if (this.slug) {
+      window.location.href = `/blog/${this.slug}`;
+    } else {
+      console.error('Navigation failed - Blog details:', {
+        title: this.title,
+        slug: this.slug,
+        categories: this.categories
+      });
+    }
+  }
+  get formattedCategories() {
+    return this.categories.map(category => {
+      return {
+        id: `category-${category}-${Math.random().toString(36).substr(2, 9)}`,
+        name: category,
+        class: `category-pill ${this.pillColor}`
+      };
+    });
+  }
 
-  // Returns an inline style string based on pillClass using the mapping object.
-  get pillStyle() {
-    return PILL_STYLES[this.pillClass] || '';
+  // Add connected callback for debugging
+  connectedCallback() {
+    console.log('BlogItem connected:', {
+      title: this.title,
+      slug: this.slug
+    });
   }
   /*LWC compiler v8.14.0*/
 }
@@ -46,7 +63,10 @@ _registerDecorators(BlogItem, {
     categories: {
       config: 0
     },
-    pillClass: {
+    pillColor: {
+      config: 0
+    },
+    slug: {
       config: 0
     }
   }

@@ -1,6 +1,9 @@
 import { LightningElement } from 'lwc';
 
 export default class CertificationIcons extends LightningElement {
+    selectedCertification = null;
+    showModal = false;
+
     certifications = [
         {
             id: 'admin',
@@ -44,14 +47,32 @@ export default class CertificationIcons extends LightningElement {
         }
     ];
     
-    selectedCertification = null;
-    
     handleIconClick(event) {
         const certId = event.currentTarget.dataset.id;
-        this.selectedCertification = this.certifications.find(cert => cert.id === certId);
+        const clickedCert = this.certifications.find(cert => cert.id === certId);
+        
+        this.selectedCertification = clickedCert;
+        this.showModal = true;
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
     
     handleCloseClick() {
+        this.showModal = false;
         this.selectedCertification = null;
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    handleModalOverlayClick(event) {
+        if (event.target === event.currentTarget) {
+            this.handleCloseClick();
+        }
+    }
+
+    handleModalContentClick(event) {
+        event.stopPropagation();
+    }
+
+    disconnectedCallback() {
+        document.body.style.overflow = ''; // Ensure scroll is restored
     }
 }

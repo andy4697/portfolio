@@ -54,6 +54,15 @@
             "bootstrap": {
                 "syntheticShadow": true
             }
+        },
+        {
+            "id": "blog-post",
+            "path": "/blog/:slug",
+            "layoutTemplate": "$layoutsDir/main.html",
+            "rootComponent": "pages/blogPost",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
         }
     ],
     "assets": [
@@ -61,6 +70,11 @@
             "alias": "assetsDir",
             "dir": "$rootDir/src/assets",
             "urlPath": "/public/assets"
+        },
+        {
+            "alias": "contentDir",
+            "dir": "$rootDir/src/content",
+            "urlPath": "/src/content"
         }
     ]
 }

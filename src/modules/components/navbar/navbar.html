@@ -1,20 +1,31 @@
 <template>
-    <nav class="slds-nav-vertical slds-p-around_none navigation-menu">
-        <!-- No extra data attributes or onClick needed -->
-        <a href="/home" class="slds-nav-vertical__item nav-item">
-            <span class="slds-nav-vertical__action slds-truncate">Home</span>
-        </a>
-        <a href="/projects" class="slds-nav-vertical__item nav-item">
-            <span class="slds-nav-vertical__action slds-truncate">Projects</span>
-        </a>
-        <a href="/work" class="slds-nav-vertical__item nav-item">
-            <span class="slds-nav-vertical__action slds-truncate">Work</span>
-        </a>
-        <a href="/blogs" class="slds-nav-vertical__item nav-item">
-            <span class="slds-nav-vertical__action slds-truncate">Blogs</span>
-        </a>
-        <a href="/contact" class="slds-nav-vertical__item nav-item">
-            <span class="slds-nav-vertical__action slds-truncate">Contact</span>
-        </a>
-    </nav>
+    <div class="slds-nav-vertical__section">
+        <ul class="custom-nav-list">
+            <li class="custom-nav-item">
+                <a href="/home" class="custom-nav-link" data-page="home">
+                    <span class="custom-nav-text">Home</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="/projects" class="custom-nav-link" data-page="projects">
+                    <span class="custom-nav-text">Projects</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="/work" class="custom-nav-link" data-page="work">
+                    <span class="custom-nav-text">Work</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="/blogs" class="custom-nav-link" data-page="blogs">
+                    <span class="custom-nav-text">Blogs</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="/contact" class="custom-nav-link" data-page="contact">
+                    <span class="custom-nav-text">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </template>

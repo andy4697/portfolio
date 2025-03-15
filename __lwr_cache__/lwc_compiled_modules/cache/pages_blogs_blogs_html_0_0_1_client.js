@@ -2,12 +2,11 @@ import _implicitStylesheets from "./blogs.css";
 import _implicitScopedStylesheets from "./blogs.scoped.css?scoped=true";
 import _componentsBlogList from "components/blogList";
 import {freezeTemplate, parseFragment, registerTemplate} from "lwc";
-const $fragment1 = parseFragment`<h1 class="slds-text-heading_large${0}"${2}>Blogs</h1>`;
+const $fragment1 = parseFragment`<h1 class="blogs-title slds-text-heading_large slds-m-bottom_medium${0}"${2}>Blogs</h1>`;
 const stc0 = {
   classMap: {
-    "blog-data": true,
-    "slds-p-around_medium": true,
-    "slds-m-top_xx-large": true
+    "blogs-container": true,
+    "slds-p-around_medium": true
   },
   key: 0
 };

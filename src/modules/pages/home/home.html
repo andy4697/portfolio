@@ -1,174 +1,39 @@
 <template>
-    <div class="slds-p-around_medium">
+    <div class="home-container">
         <!-- INTRO SECTION -->
-        <section class="slds-text-body_regular slds-m-bottom_medium">
+        <section class="intro-section">
             <h1 class="slds-text-heading_large">Hey there 👋</h1>
             <h2 class="slds-text-heading_medium">I'm Anudeep Appikatla</h2>
             <h3 class="slds-text-heading_small">5x Salesforce Certified</h3>
-            <p class="slds-text-body_regular">
+            <p class="intro-text">
                 A passionate Salesforce Developer with 5x certifications who loves creating 
                 innovative solutions and learning new technologies.
             </p>
-            <div class="slds-m-top_medium">
-                <button class="slds-button slds-button_neutral">Let's connect!</button>
+            <div class="slds-m-top_large">
+                <a href="/contact" class="slds-button slds-button_neutral slds-button_compact">Let's talk</a>
             </div>
         </section>
 
         <!-- PROJECTS SECTION -->
-        <section>
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">My last projects &lt;/&gt;</h2>
-            <div class="slds-grid slds-wrap slds-gutters">
-
-                <!-- Project Card 1 -->
-                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_small">
-                    <div class="slds-box slds-box_x-small project-card">
-                        <img 
-                            src="/public/assets/project.png" 
-                            alt="Demo Project 1" 
-                            class="slds-m-bottom_small"
-                        />
-                        <h3 class="slds-text-heading_small">
-                            Demo Project 1 
-                            <span class="slds-badge slds-theme_success">NEW</span>
-                        </h3>
-                        <p class="slds-text-body_small">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        
-                        <!-- Tech Tags in Pill form -->
-                        <ul class="slds-list_horizontal slds-wrap slds-m-top_small">
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="HTML">HTML</span>
-                                </span>
-                            </li>
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="CSS">CSS</span>
-                                </span>
-                            </li>
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="JavaScript">JavaScript</span>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_small">
-                    <div class="slds-box slds-box_x-small project-card">
-                        <img 
-                            src="/public/assets/project.png"  
-                            alt="Demo Project 2" 
-                            class="slds-m-bottom_small"
-                        />
-                        <h3 class="slds-text-heading_small">Demo Project 2</h3>
-                        <p class="slds-text-body_small">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        
-                        <!-- Tech Tags in Pill form -->
-                        <ul class="slds-list_horizontal slds-wrap slds-m-top_small">
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="Apex">Apex</span>
-                                </span>
-                            </li>
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="LWC">LWC</span>
-                                </span>
-                            </li>
-                            <li class="slds-list__item">
-                                <span class="slds-pill pill-custom">
-                                    <span class="slds-pill__label" title="Salesforce">Salesforce</span>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="slds-text-heading_medium">Latest projects</h2>
+                <a href="/projects" class="view-all-link">View all projects →</a>
             </div>
+            
+            <!-- Use the projectsList component with isHomePage attribute -->
+            <components-project-list is-home-page="true"></components-project-list>
         </section>
 
         <!-- LATEST FROM BLOG SECTION -->
-        <section class="slds-m-top_large">
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Latest Blogs</h2>
-            <div class="slds-grid slds-wrap slds-gutters">
-                
-                <!-- Blog Post 3 -->
-                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
-                    <div class="slds-box slds-box_x-small blog-card slds-media">
-                        <!-- Image on the left -->
-                        <div class="slds-media__figure slds-m-right_medium">
-                            <img 
-                                src="/public/assets/project.png" 
-                                alt="Demo Post 3" 
-                                style="max-width: 80px;"
-                            />
-                        </div>
-                        <!-- Text on the right -->
-                        <div class="slds-media__body">
-                            <h3 class="slds-text-heading_small">
-                                Demo Post 3
-                                <span class="slds-badge slds-theme_warning">Demo badge</span>
-                            </h3>
-                            <p class="slds-text-body_small">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Post 2 -->
-                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
-                    <div class="slds-box slds-box_x-small blog-card slds-media">
-                        <div class="slds-media__figure slds-m-right_medium">
-                            <img 
-                                src="/public/assets/project.png" 
-                                alt="Demo Post 2" 
-                                style="max-width: 80px;"
-                            />
-                        </div>
-                        <div class="slds-media__body">
-                            <h3 class="slds-text-heading_small">Demo Post 2</h3>
-                            <p class="slds-text-body_small">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Post 1 -->
-                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
-                    <div class="slds-box slds-box_x-small blog-card slds-media">
-                        <div class="slds-media__figure slds-m-right_medium">
-                            <img 
-                                src="/public/assets/project.png" 
-                                alt="Demo Post 1" 
-                                style="max-width: 80px;"
-                            />
-                        </div>
-                        <div class="slds-media__body">
-                            <h3 class="slds-text-heading_small">Demo Post 1</h3>
-                            <p class="slds-text-body_small">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="slds-text-heading_medium">Latest Blogs</h2>
+                <a href="/blogs" class="view-all-link">View all blogs →</a>
             </div>
+            
+            <!-- Use the blogList component with isHomePage attribute -->
+            <components-blog-list is-home-page="true"></components-blog-list>
         </section>
-
-       
-           
     </div>
 </template>

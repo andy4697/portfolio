@@ -1,0 +1,126 @@
+.project-item-container {
+    width: 100%;
+    background-color: var(--card-background, #fff);
+    border: 1px solid var(--border-color, #d8dde6);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+    color: var(--text-color, #333);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-item-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  [data-theme="dark"] .project-item-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .project-image-container {
+    width: 100%;
+    background-color: #f2f2f2;
+    overflow: hidden;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .project-description {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+  
+  .new-badge {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    background-color: #04844b;
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Technology pills styling */
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .tech-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid;
+    transition: filter 0.2s ease;
+  }
+  
+  /* Pill color variations */
+  .tech-pill.blue {
+    background-color: var(--pill-blue-bg);
+    color: var(--pill-blue-color);
+    border-color: var(--pill-blue-border);
+  }
+  
+  .tech-pill.green {
+    background-color: var(--pill-green-bg);
+    color: var(--pill-green-color);
+    border-color: var(--pill-green-border);
+  }
+  
+  .tech-pill.orange {
+    background-color: var(--pill-orange-bg);
+    color: var(--pill-orange-color);
+    border-color: var(--pill-orange-border);
+  }
+  
+  .tech-pill.purple {
+    background-color: var(--pill-purple-bg);
+    color: var(--pill-purple-color);
+    border-color: var(--pill-purple-border);
+  }
+  
+  .tech-pill.pink {
+    background-color: var(--pill-pink-bg);
+    color: var(--pill-pink-color);
+    border-color: var(--pill-pink-border);
+  }
+  
+  /* Hover effect for pills */
+  .tech-pill:hover {
+    filter: brightness(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .project-content {
+      padding: 1rem;
+    }
+  }

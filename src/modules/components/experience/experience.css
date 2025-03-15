@@ -1,50 +1,60 @@
-/* Container styling */
 .experience-container {
-    max-width: 800px;
-    background-color: var(--card);
-    color: var(--card-foreground);
-    padding: 2rem;
-    border-radius: var(--radius);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Timeline specific styling - only custom CSS for the timeline component */
-  .timeline-item {
-    position: relative;
-    padding-left: 3rem;
-  }
-  
-  /* Vertical line */
-  .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 6px; /* Start from the center of the dot */
-    height: 100%; /* Full height */
-    width: 2px;
-    background-color: var(--timeline-line-color);
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Connect dots with continuous line */
-  .timeline-item:not(:last-child):before {
-    height: calc(100% + 6px); /* Extend to connect with the next dot */
-  }
-  
-  /* Remove line after the last item */
-  .timeline-item:last-child:before {
-    height: 0;
-  }
-  
-  /* Blue dot marker */
-  .timeline-marker {
-    position: absolute;
-    left: 0;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    background-color: var(--timeline-dot-color);
-    border-radius: 50%;
-    z-index: 1; /* Ensure dot appears above the line */
-    transition: background-color 0.3s ease;
-  }
+  max-width: 800px;
+  background-color: transparent;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+/* Timeline specific styling */
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+}
+
+/* Vertical line */
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  height: 100%;
+  width: 2px;
+  background-color: var(--timeline-line-color);
+}
+
+/* Connect dots with continuous line */
+.timeline-item:not(:last-child):before {
+  height: calc(100% + 6px);
+}
+
+/* Remove line after the last item */
+.timeline-item:last-child:before {
+  height: 0;
+}
+
+/* Dot marker */
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--timeline-dot-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Text styling overrides */
+.experience-container .slds-text-heading_large,
+.experience-container .slds-text-heading_medium {
+  color: var(--text-color);
+}
+
+.experience-container .slds-text-body_small {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.experience-container .slds-text-body_regular {
+  color: var(--text-color);
+}
