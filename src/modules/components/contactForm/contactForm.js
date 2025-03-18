@@ -1,4 +1,5 @@
 import { LightningElement, track } from 'lwc';
+import { config } from 'config/environment';
 
 export default class ContactForm extends LightningElement {
     @track formData = {
@@ -17,10 +18,10 @@ export default class ContactForm extends LightningElement {
 
     // EmailJS Configuration from Netlify environment
     emailJsConfig = {
-        publicKey: import.meta.env.EMAILJS_PUBLIC_KEY,
-        serviceId: import.meta.env.EMAILJS_SERVICE_ID,
-        contactTemplateId: import.meta.env.EMAILJS_CONTACT_TEMPLATE_ID,
-        autoReplyTemplateId: import.meta.env.EMAILJS_AUTO_REPLY_TEMPLATE_ID
+        publicKey: config.emailJs.publicKey,
+        serviceId: config.emailJs.serviceId,
+        contactTemplateId: config.emailJs.contactTemplateId,
+        autoReplyTemplateId: config.emailJs.autoReplyTemplateId
     };
     
     connectedCallback() {
