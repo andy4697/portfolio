@@ -16,7 +16,6 @@
     "copyslds": "node ./scripts/copy-slds.mjs"
   },
   "dependencies": {
-    "@eschweitzer78/lwrjs-env-module-provider": "1.0.4",
     "@salesforce-ux/design-system": "^2.26.2",
     "lwc": "latest",
     "lwr": "0.16.11"

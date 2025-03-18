@@ -15,12 +15,12 @@ export default class ContactForm extends LightningElement {
         hasToast: false
     };
 
-    // EmailJS Configuration
+    // EmailJS Configuration from Netlify environment
     emailJsConfig = {
-        publicKey: 'UXZzYv8SZy2e-8G93',        
-        serviceId: 'service_qr24frp',           
-        contactTemplateId: 'template_zvgsm2m',   
-        autoReplyTemplateId: 'template_q9c7nnr' 
+        publicKey: import.meta.env.EMAILJS_PUBLIC_KEY,
+        serviceId: import.meta.env.EMAILJS_SERVICE_ID,
+        contactTemplateId: import.meta.env.EMAILJS_CONTACT_TEMPLATE_ID,
+        autoReplyTemplateId: import.meta.env.EMAILJS_AUTO_REPLY_TEMPLATE_ID
     };
     
     connectedCallback() {
@@ -165,6 +165,7 @@ export default class ContactForm extends LightningElement {
             });
         }
     }
+    
 
     hideToast() {
         const toastService = this.template.querySelector('components-toast-service');
