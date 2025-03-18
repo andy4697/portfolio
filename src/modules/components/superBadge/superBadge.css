@@ -1,37 +1,45 @@
 .superbadges-container {
     max-width: 800px;
-    background-color: #fff;
+    background-color: var(--card);
+    color: var(--card-foreground);
     padding: 2rem;
-    border-radius: 4px;
-}
-
-.superbadges-grid {
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .superbadges-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-}
-
-.superbadge-item {
+  }
+  
+  .superbadge-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 150px;
-}
-
-.superbadge-icon {
+  }
+  
+  .superbadge-icon {
     width: 100px;
     height: 100px;
     margin-bottom: 1rem;
-}
-
-.superbadge-icon img {
+    background-color: var(--secondary);
+    border-radius: 50%;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .superbadge-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.superbadge-name {
+  }
+  
+  .superbadge-name {
     text-align: center;
     font-weight: 500;
-}
+    color: var(--card-foreground);
+    transition: color 0.3s ease;
+  }

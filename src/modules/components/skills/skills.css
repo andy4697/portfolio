@@ -1,76 +1,182 @@
-.skills-container {
-    max-width: 800px;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 4px;
+.skills-section {
+    padding: 2rem 1rem;
+    background-color: var(--background-color);
+}
+
+.skills-section i {
+    color: var(--icon-color);
+}
+
+/* Custom property for dynamic icon colors */
+i[data-color] {
+    --icon-color: attr(data-color);
+    color: var(--icon-color) !important;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);/*repeat(auto-fill, minmax(300px, 1fr))*/
+    gap: var(--skills-grid-gap);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.skill-item {
+.skill-card-wrapper {
+    break-inside: avoid;
+    padding-bottom: 1rem;
+}
+
+.skill-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: var(--skills-card-padding);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center; /* Center all header content */
+}
+
+.header-content {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    background-color: #f8f8f8;
-    transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: center; /* Center the flex items horizontally */
+    gap: 0.75rem;
 }
 
-.skill-item:hover {
+.header-content i {
+    font-size: 1.5rem;
+}
+
+.category-icon,
+.skill-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+}
+
+.category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.card-body {
+    padding: var(--skills-card-padding);
+    flex-grow: 1;
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--skills-pill-gap);
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: var(--text-color);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    background: var(--background-color); /* Use theme variable instead of explicit color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.skill-pill:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.skill-item i {
-    margin-right: 0.75rem;
-    font-size: 1.25rem;
+.skill-pill i {
+    font-size: 1rem;
 }
 
-.skill-name {
-    font-weight: 500;
+/* Icon color enforcement */
+.skill-pill i[data-color],
+.header-content i[data-color] {
+    color: var(--icon-color) !important;
 }
 
-/* Icon colors */
-.fa-html5 {
-    color: #e34c26;
+/* Dark theme adjustments */
+[data-theme="dark"] .skill-card {
+    background: var(--card-background);
+    border-color: var(--border-color);
 }
 
-.fa-css3-alt, .fa-css3 {
-    color: #264de4;
+[data-theme="dark"] .skill-pill {
+    background: #1a1a1a; /* Explicit black background for dark theme */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.fa-js {
-    color: #f7df1e;
+[data-theme="dark"] .skill-pill:hover {
+    background: #1a1a1a; /* Slightly lighter black on hover */
 }
 
-.fa-react {
-    color: #61dafb;
+/* Ensure icon colors are preserved in dark mode */
+[data-theme="dark"] .skill-pill i[data-color],
+[data-theme="dark"] .header-content i[data-color] {
+    color: var(--icon-color) !important;
 }
 
-.fa-node-js {
-    color: #339933;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.fa-database {
-    color: #336791;
-}
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 
-.fa-git-alt {
-    color: #f05032;
-}
+    .skills-section {
+        padding: 1.5rem 1rem;
+    }
 
-.fa-github {
-    color: #333;
-}
+    .skill-card-wrapper {
+        padding-bottom: 0.5rem;
+    }
 
-.fa-java {
-    color: #007396;
-}
+    .card-header {
+        padding: 0.75rem;
+    }
 
-.fa-linux {
-    color: #333;
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    .skill-pills {
+        gap: 0.4rem;
+    }
+
+    .skill-pill {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+/* Print styles */
+@media print {
+    .skill-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .skill-pill {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
 }

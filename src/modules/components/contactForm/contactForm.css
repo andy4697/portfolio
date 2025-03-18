@@ -1,0 +1,311 @@
+/* Toast positioning */
+.toast-wrapper {
+    height: 0;
+    overflow: visible;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ensure form resets smoothly */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add smooth transition for form elements */
+.form-group {
+    transition: all 0.3s ease-in-out;
+}
+
+input,
+textarea {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Container */
+.form-container {
+    position: relative;
+    background: var(--card-background);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+    margin: 60px auto 0; /* Add top margin to accommodate toast */
+    transition: margin 0.3s ease-in-out;
+}
+
+.form-container.show-toast {
+    margin-top: 120px; /* Increase top margin when toast is visible */
+}
+
+/* Contact Form */
+.contact-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Form Layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduced from 1.5rem */
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced from 0.75rem */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add specific styling for the name field group */
+.form-group.name-field {
+    margin-top: 0;
+    transition: margin-top 0.3s ease-in-out;
+}
+
+/* When toast is visible, add margin to the name field */
+.form-container.show-toast .form-group.name-field {
+    margin-top: 4rem; /* Adjust this value based on your toast height */
+}
+
+/* Labels */
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Reduced from 0.75rem */
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9rem; /* Reduced from 1rem */
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    font-size: 1rem;
+    width: 16px; /* Reduced from 20px */
+    text-align: center;
+}
+
+.required {
+    color: #ea001e; /* Using a solid red color instead of var(--toast-error-bg) */
+    margin-left: 0.25rem;
+    font-weight: bold;
+    font-size: 1rem; /* Added to make it more visible */
+    display: inline-block; /* Added to ensure consistent rendering */
+}
+
+/* Optional: Add hover state for better visibility */
+.form-group label:hover .required {
+    color: #ba0017; /* Slightly darker on hover */
+}
+
+/* Input Fields */
+input,
+textarea {
+    padding: 0.75rem; /* Reduced from 1rem */
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 0.9rem; /* Reduced from 1rem */
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 100px; /* Reduced from 120px */
+    resize: vertical;
+}
+
+input:hover,
+textarea:hover {
+    border-color: var(--secondary-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--pill-blue-bg);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--toggle-icon-color);
+    opacity: 0.7;
+}
+
+/* Error States */
+.error-message {
+    color: var(--toast-error-text);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: var(--toast-error-bg);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Submit Button */
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem; /* Reduced from 1rem 1.5rem */
+    background: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem; /* Reduced from 1.1rem */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.75rem; /* Reduced from 1rem */
+    width: 100%;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    background: var(--toggle-icon-color);
+}
+
+.submit-button i {
+    font-size: 1.1rem;
+}
+
+/* Loading State */
+.submit-button i.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Honeypot */
+.honeypot-field {
+    display: none;
+}
+
+/* Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+}
+
+.contact-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+.contact-title-wrapper i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.contact-title {
+    font-size: 1.75rem; /* Reduced from 2rem */
+    font-weight: 700;
+    color: var(--primary-color);
+    /* margin-bottom: 0.2rem; Reduced from 0.75rem */
+    letter-spacing: -0.5px;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+    color: var(--secondary-color);
+}
+
+.contact-email i {
+    font-size: 0.9rem;
+}
+
+.contact-subtitle {
+    font-size: 0.95rem; /* Reduced from 1.1rem */
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 350px; /* Reduced from 450px */
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.form-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 1rem 0; /* Reduced from 1.5rem */
+    opacity: 0.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .form-container {
+        padding: 1.25rem;
+        margin: 0 0.75rem;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.75rem;
+    }
+
+    .submit-button {
+        padding: 0.75rem 1rem;
+    }
+}

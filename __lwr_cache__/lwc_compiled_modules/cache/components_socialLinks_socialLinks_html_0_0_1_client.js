@@ -1,10 +1,14 @@
 import _implicitStylesheets from "./socialLinks.css";
 import _implicitScopedStylesheets from "./socialLinks.scoped.css?scoped=true";
-import {freezeTemplate, parseFragment, registerTemplate} from "lwc";
-const $fragment1 = parseFragment`<div class="slds-col social-links slds-grid slds-grid_align-center slds-gutters${0}"${2}><a href="https://github.com/yourusername" class="social-icon${0}" target="_blank" aria-label="GitHub"${2}><i class="fab fa-github slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://medium.com/@yourusername" class="social-icon${0}" target="_blank" aria-label="Medium"${2}><i class="fab fa-medium slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://www.linkedin.com/in/yourusername" class="social-icon${0}" target="_blank" aria-label="LinkedIn"${2}><i class="fab fa-linkedin slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://www.buymeacoffee.com/yourusername" class="social-icon${0}" target="_blank" aria-label="Buy Me a Coffee"${2}><i class="fas fa-coffee slds-icon slds-icon-text-default${0}"${2}></i></a></div>`;
+import {freezeTemplate, parseFragment, registerTemplate, sanitizeAttribute} from "lwc";
+const $fragment1 = parseFragment`<div class="slds-col social-links slds-grid slds-grid_align-center slds-gutters${0}"${2}><a href="https://github.com/andy4697" class="social-icon${0}" target="_blank" aria-label="GitHub"${2}><i class="fab fa-github slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://www.linkedin.com/in/anudeep-appikatla" class="social-icon${0}" target="_blank" aria-label="LinkedIn"${2}><i class="fab fa-linkedin slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://twitter.com/aanudeep4697" class="social-icon${0}" target="_blank" aria-label="Twitter"${2}><i class="fab fa-x-twitter slds-icon slds-icon-text-default${0}"${2}></i></a><a href="https://trailblazer.me/id/aappikatla" class="social-icon${0}" target="_blank" aria-label="Trailhead Profile"${2}><svg class="slds-icon slds-icon-text-default${0}" aria-hidden="true"${2}><use${"a9:xlink:href"}${3}/></svg></a></div>`;
 function tmpl($api, $cmp, $slotset, $ctx) {
-  const {st: api_static_fragment} = $api;
-  return [api_static_fragment($fragment1, 1)];
+  const {sp: api_static_part, st: api_static_fragment} = $api;
+  return [api_static_fragment($fragment1, 1, [api_static_part(9, {
+    attrs: {
+      "xlink:href": sanitizeAttribute("use", "http://www.w3.org/2000/svg", "xlink:href", "/public/assets/icons/utility-sprite/svg/symbols.svg#trailhead")
+    }
+  }, null)])];
   /*LWC compiler v8.14.0*/
 }
 export default registerTemplate(tmpl);

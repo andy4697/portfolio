@@ -1,5 +1,17 @@
-.blog-data{
-    max-width: 800px;
-    margin: 0 auto; 
-    padding: 2rem;
+.blogs-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.blogs-title {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blogs-container {
+      padding: 1rem;
+  }
 }

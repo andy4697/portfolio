@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="$assetsDir/styles/salesforce-lightning-design-system.css"/>
     <link rel="stylesheet" href="$assetsDir/global.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
     <title>Anudeep Appikatla</title>
 </head>
 <body>
+    <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
+    
     <div class="layout-container">
         <components-sidebar></components-sidebar>
         <div class="content-area">
-            <components-toggle-theme onthemechange={handleThemeChange}></components-toggle-theme>
             {{{body}}}
             <components-footer></components-footer>
         </div>
-        
     </div>
     {{{lwr_resources}}}
 </body>

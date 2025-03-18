@@ -4,19 +4,21 @@ export default class Education extends LightningElement {
     educations = [
         {
             id: '1',
-            title: 'Title Name',
-            startYear: '[start year]',
-            endYear: '[end year]',
-            institution: '[Study Center Name]',
-            location: '[City], [Country]'
+            institution: 'University of Arizona',
+            location: 'Tucson, Arizona, USA',
+            title: 'Master of Information Science',
+            specialization: 'Machine Learning',
+            startYear: '2023',
+            endYear: '2025'
         },
         {
             id: '2',
-            title: 'Title Name',
-            startYear: '[start year]',
-            endYear: '[end year]',
-            institution: '[Study Center Name]',
-            location: '[City], [Country]'
+            institution: 'Manipal Insitute of Technology, MAHE',
+            location: 'Manipal, Karnataka, India',
+            title: 'Bachelor of Technology in Electronics and Communication Engineering',
+            specialization: 'Signal Processing',
+            startYear: '2015',
+            endYear: '2019'
         }
     ];
 }

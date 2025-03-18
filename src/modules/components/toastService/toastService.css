@@ -1,0 +1,73 @@
+.slds-notify_container {
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    bottom: 10px;
+}
+
+.slds-notify_toast {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.slds-notify_container.slds-is-visible .slds-notify_toast {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.toast-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.toast-message strong {
+    font-weight: 600;
+}
+
+/* Toast variants */
+.slds-theme_success {
+    background: var(--toast-success-bg);
+    color: var(--toast-success-text);
+    border: none;
+}
+
+.slds-theme_error {
+    background: var(--toast-error-bg);
+    color: var(--toast-error-text);
+    border: none;
+}
+
+/* Icons */
+.fas.fa-check-circle,
+.fas.fa-exclamation-circle {
+    font-size: 1.25rem;
+}
+
+.slds-theme_success .fas.fa-check-circle {
+    color: var(--toast-success-text);
+}
+
+.slds-theme_error .fas.fa-exclamation-circle {
+    color: var(--toast-error-text);
+}
+

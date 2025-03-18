@@ -1,18 +1,37 @@
 .social-links {
-    margin: 0; 
-    padding: 3px; 
-    position: absolute;
-    bottom :0
+  margin: 0; 
+  padding: 3px; 
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .social-icon {
-    font-size: 1.5rem;
-    color: #16325c;
-    /* Space icons out; or rely on slds-gutters from your container's classes. */
-    margin-right: 1rem;
-    transition: color 0.2s ease;
+  font-size: 1.5rem;
+  color: var(--nav-text-color);
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Prevent default underline */
 }
 
 .social-icon:hover {
-    color: #0070d2;
+  color: var(--primary-color);
+  text-decoration: none; /* Explicitly prevent underline on hover */
+}
+/* Specific styling for the Trailhead icon */
+.social-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor; /* This will inherit the color from social-icon */
+}
+
+/* Ensure all icons are aligned */
+.social-icon i,
+.social-icon svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

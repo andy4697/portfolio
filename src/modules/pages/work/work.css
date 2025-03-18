@@ -1,5 +1,24 @@
-/* .resume-container {
-    max-width: ;
-    margin: 0 auto; 
-    padding: 2rem;
-} */
+.resume-container {
+  max-width: 1000px; /* Match the width used in home and projects pages */
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text-color);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden; /* Contain all child elements */
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+/* Force all direct children to respect container width */
+.resume-container > div {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}

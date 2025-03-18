@@ -1,10 +1,15 @@
 {
-    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+   
+    "lwc": { 
+        "modules": [
+            { "dir": "$rootDir/src/modules" }
+        ]
+    },
     "routes": [
         {
             "id": "default",
             "path": "/",
-            "layoutTemplate":"$layoutsDir/main.html",
+            "layoutTemplate": "$layoutsDir/main.html",
             "rootComponent": "pages/home",
             "bootstrap": {
                 "syntheticShadow": true
@@ -13,7 +18,7 @@
         {
             "id": "home",
             "path": "/home",
-            "layoutTemplate":"$layoutsDir/main.html",
+            "layoutTemplate": "$layoutsDir/main.html",
             "rootComponent": "pages/home",
             "bootstrap": {
                 "syntheticShadow": true
@@ -54,6 +59,15 @@
             "bootstrap": {
                 "syntheticShadow": true
             }
+        },
+        {
+            "id": "blog-post",
+            "path": "/blog/:slug",
+            "layoutTemplate": "$layoutsDir/main.html",
+            "rootComponent": "pages/blogPost",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
         }
     ],
     "assets": [
@@ -61,6 +75,11 @@
             "alias": "assetsDir",
             "dir": "$rootDir/src/assets",
             "urlPath": "/public/assets"
+        },
+        {
+            "alias": "contentDir",
+            "dir": "$rootDir/src/content",
+            "urlPath": "/src/content"
         }
     ]
 }

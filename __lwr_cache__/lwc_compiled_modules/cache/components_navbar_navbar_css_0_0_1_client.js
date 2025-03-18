@@ -2,7 +2,7 @@ function stylesheet(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
   var hostSelector = token ? ("[" + token + "-host]") : "";
   var suffixToken = token ? ("-" + token) : "";
-  return ".navigation-menu" + shadowSelector + " {padding: 0;}.nav-item" + shadowSelector + " {color: #05162f;text-decoration: none;font-size: 1rem;transition: background-color 0.3s ease;display: block;}.nav-item:hover" + shadowSelector + " {background-color: #eef1f6;}";
+  return ".custom-nav-list" + shadowSelector + " {list-style: none;padding: 0;margin: 0;}.custom-nav-item" + shadowSelector + " {margin: 0;padding: 0;}.custom-nav-link" + shadowSelector + " {display: flex;align-items: center;padding: 0.75rem 1rem;color: var(--nav-text-color, #16325c);text-decoration: none;position: relative;transition: background-color 0.2s ease;border-radius: 0;}.custom-nav-text" + shadowSelector + " {font-size: 1rem;font-weight: normal;}.custom-nav-link:hover" + shadowSelector + " {background-color: var(--nav-hover-bg, rgba(238, 241, 246, 0.5));}.custom-nav-link[aria-current=\"page\"]" + shadowSelector + " {background-color: var(--nav-active-bg, #eef5ff);font-weight: 500;}[data-theme=\"dark\"]" + shadowSelector + " .custom-nav-link" + shadowSelector + " {color: var(--nav-text-color, #e0e0e0);}[data-theme=\"dark\"]" + shadowSelector + " .custom-nav-link:hover" + shadowSelector + " {background-color: var(--nav-hover-bg, rgba(70, 70, 70, 0.5));}[data-theme=\"dark\"]" + shadowSelector + " .custom-nav-link[aria-current=\"page\"]" + shadowSelector + " {background-color: var(--nav-active-bg, #2c2c2c);}";
   /*LWC compiler v8.14.0*/
 }
 export default [stylesheet];
