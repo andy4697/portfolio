@@ -5,6 +5,24 @@
   border-radius: 4px;
 }
 
+.institution {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+
+
+.degree-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-details {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 /* Timeline specific styling */
 .timeline-item {
   position: relative;

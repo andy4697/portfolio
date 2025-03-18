@@ -1,121 +1,127 @@
 <template>
-    <div class="form-container">
-      <!-- Success/Error Messages -->
-      <template if:true={isSuccess}>
-        <div class="notification success-notification" role="alert">
-          <div class="notification-content">
-            <span class="notification-icon">✓</span>
-            <h2>Thank you! Your message has been sent successfully.</h2>
-          </div>
-          <button class="close-button" title="Close" onclick={closeNotification}>×</button>
+    <div class={containerClasses}>
+        <div class="form-header">
+            <div class="contact-title-wrapper">
+                <i class="fas fa-envelope-open-text"></i>
+                <h1 class="contact-title">Get in Touch</h1>
+            </div>
+            <a href="mailto:hello@anudeepappikatla.com" class="contact-email">
+                <i class="fas fa-envelope"></i>
+                hello@anudeepappikatla.com
+            </a>
+            <p class="contact-subtitle">
+                Got an exciting project or just want to connect?
+                Drop me a message below.
+            </p>
         </div>
-      </template>
-      
-      <template if:true={isError}>
-        <div class="notification error-notification" role="alert">
-          <div class="notification-content">
-            <span class="notification-icon">!</span>
-            <h2>There was an error sending your message. Please try again.</h2>
-          </div>
-          <button class="close-button" title="Close" onclick={closeNotification}>×</button>
-        </div>
-      </template>
-      
-      <!-- Contact Form -->
-      <form onsubmit={handleSubmit} class="contact-form">
-        <!-- Name Field -->
-        <!-- <div class="form-element">
-          <label class="form-label" for="name">
-            <span class="required-indicator">*</span> Name
-          </label>
-          <div class="form-control">
-            <input type="text" 
-                   id="name" 
-                   name="name" 
-                   required 
-                   class="form-input" 
-                   placeholder="Your name"
-                   value={name}
-                   onchange={handleInputChange} />
-          </div>
-        </div> -->
-        
-        <!-- Email Field -->
-        <div class="form-element">
-          <label class="form-label" for="email">
-            <span class="required-indicator">*</span> Email
-          </label>
-          <div class="form-control">
-            <input type="email" 
-                   id="email" 
-                   name="email" 
-                   required 
-                   class="form-input" 
-                   placeholder="Your email address"
-                   value={email}
-                   onchange={handleInputChange} />
-          </div>
-        </div>
-        
-        <!-- Subject Field -->
-        <div class="form-element">
-          <label class="form-label" for="subject">Subject</label>
-          <div class="form-control">
-            <input type="text" 
-                   id="subject" 
-                   name="subject" 
-                   class="form-input" 
-                   placeholder="Subject of your message"
-                   value={subject}
-                   onchange={handleInputChange} />
-          </div>
-        </div>
-        
-        <!-- Message Field -->
-        <div class="form-element">
-          <label class="form-label" for="message">
-            <span class="required-indicator">*</span> Message
-          </label>
-          <div class="form-control">
-            <textarea id="message" 
-                      name="message" 
-                      required 
-                      class="form-textarea" 
-                      placeholder="Your message"
-                      rows="5"
-                      value={message}
-                      onchange={handleInputChange}></textarea>
-          </div>
-        </div>
-        
-        <!-- Honeypot field for spam protection -->
-        <div class="honeypot-field">
-          <input type="text" 
-                 id="website" 
-                 name="website" 
-                 value={website}
-                 onchange={handleInputChange} />
-        </div>
-        
-        <!-- Submit Button -->
-        <div class="form-element">
-          <button type="submit" 
-                  class="submit-button" 
-                  disabled={isSubmitting}>
-            <template if:true={isSubmitting}>
-              <!-- SLDS Spinner -->
-              <div class="slds-spinner slds-spinner_small slds-spinner_inline slds-m-right_x-small" role="status">
-                <div class="slds-spinner__dot-a"></div>
-                <div class="slds-spinner__dot-b"></div>
-                <span class="slds-assistive-text">Loading</span>
-              </div>
-              Sending...
-            </template>
-            <template if:false={isSubmitting}>
-              Send Message
-            </template>
-          </button>
-        </div>
-      </form>
+        <div class="form-divider"></div>
+        <form onsubmit={handleSubmit} class="contact-form">
+            <div class="toast-wrapper">
+                <components-toast-service></components-toast-service>
+            </div>
+            
+            <div class="form-group name-field">
+                <label for="name">
+                    <i class="fas fa-user"></i>
+                    <span>Name</span>
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    placeholder="Enter your full name"
+                    value={formData.name}
+                    onchange={handleInputChange}
+                    disabled={isFormDisabled}
+                />
+                <div if:true={formState.errors.name} class="error-message">
+                    {formState.errors.name}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onchange={handleInputChange}
+                    disabled={isFormDisabled}
+                />
+                <div if:true={formState.errors.email} class="error-message">
+                    {formState.errors.email}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">
+                    <i class="fas fa-tag"></i>
+                    <span>Subject</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject" 
+                    placeholder="What's this about?"
+                    value={formData.subject}
+                    onchange={handleInputChange}
+                    disabled={isFormDisabled}
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="message">
+                    <i class="fas fa-comment-alt"></i>
+                    <span>Message</span>
+                    <span class="required">*</span>
+                </label>
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    required 
+                    placeholder="Type your message here..."
+                    rows="5"
+                    value={formData.message}
+                    onchange={handleInputChange}
+                    disabled={isFormDisabled}
+                ></textarea>
+                <div if:true={formState.errors.message} class="error-message">
+                    {formState.errors.message}
+                </div>
+            </div>
+
+            <div class="honeypot-field">
+                <input 
+                    type="text" 
+                    name="website" 
+                    value={formData.website}
+                    onchange={handleInputChange}
+                />
+            </div>
+
+            <button 
+                type="submit" 
+                class="submit-button"
+                disabled={isFormDisabled}
+            >
+                <template if:true={formState.isSubmitting}>
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Sending...</span>
+                </template>
+                <template if:false={formState.isSubmitting}>
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Message</span>
+                </template>
+            </button>
+        </form>
     </div>
-  </template>
+</template>

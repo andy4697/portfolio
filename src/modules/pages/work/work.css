@@ -1,5 +1,5 @@
 .resume-container {
-  max-width: 800px; /* Match the width used in home and projects pages */
+  max-width: 1000px; /* Match the width used in home and projects pages */
   margin: 0 auto;
   padding: 2rem;
   color: var(--text-color);

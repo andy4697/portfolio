@@ -7,9 +7,179 @@
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Content paragraphs */
+.content-paragraphs {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Link styling */
+.lets-talk-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.connect-link:hover, .lets-talk-link:hover {
+  color: var(--link-hover-color);
+}
+
+.lets-talk-link {
+  margin-left: 0.5rem;
+}
+
+/* Trailhead section */
+.trailhead-section {
+  border-top: none;
+  padding-top: 0;
+}
+
+.trailhead-section h2 {
+  display: flex;
+  align-items: center;
+}
+
+.trailhead-section .slds-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--trailhead-icon-color);
+}
+
+.trailhead-section .slds-icon.slds-icon-text-default {
+  fill: var(--trailhead-icon-color);
+}
+
+/* Trailhead icon */
+.trailhead-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+[data-theme="dark"] .trailhead-icon {
+  filter: invert(1);
+}
+
+/* Achievement pills styling */
+.achievement-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.achievement-pill {
+  border: none;
+  padding: 0.5rem 1rem;
+  height: auto;
+  align-items: center;
+  transition: transform 0.2s ease;
+  border-radius: 1rem;
+}
+
+.achievement-pill:hover {
+  transform: translateY(-2px);
+}
+
+.achievement-pill .slds-pill__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* Achievement specific styles */
+.achievement-pill.superbadge {
+  background: var(--achievement-superbadge-bg);
+  color: var(--achievement-superbadge-color);
+}
+
+.achievement-pill.badges {
+  background: var(--achievement-badges-bg);
+  color: var(--achievement-badges-color);
+}
+
+.achievement-pill.points {
+  background: var(--achievement-points-bg);
+  color: var(--achievement-points-color);
+}
+
+.achievement-pill.mountaineer {
+  background: var(--achievement-mountaineer-bg);
+  color: var(--achievement-mountaineer-color);
+}
+
+.achievement-pill.certified {
+  background: var(--achievement-certified-bg);
+  color: var(--achievement-certified-color);
+}
+
+.achievement-icon {
+  font-size: 1.1rem;
+}
+
+.achievement-count {
+  font-weight: 700;
+}
+
+.mountaineer-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  object-fit: contain;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .achievement-pill {
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-paragraphs {
+    font-size: 1rem;
+  }
+
+  .achievement-pills {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .achievement-pill {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Intro section text colors */
+.intro-section h1,
+.intro-section h2,
+.intro-section h3 {
+  color: var(--text-color);
+}
+
+.intro-text {
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .achievement-pill {
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .lets-talk-button {
+  background-color: var(--button-color) !important;
+  color: var(--button-text-color) !important;
+}
+
 /* Intro section styling */
 .intro-section {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .intro-text {
@@ -76,4 +246,147 @@
   .view-all-link {
       margin-top: 0.5rem;
   }
+
+  .badges-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge-pill {
+    margin-bottom: 0.5rem;
+  }
+
+  .actions-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lets-talk-button {
+    margin-bottom: 1rem;
+  }
+
+  .achievement-pills {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add these new styles to your existing CSS */
+
+.cta-container {
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.available-badge {
+    background-color: var(--achievement-points-bg);
+    color: var(--achievement-points-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.separator {
+    color: var(--text-color);
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+.lets-talk-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.button-icon {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.lets-talk-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lets-talk-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Hire section styling */
+.hire-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    gap: 1rem;
+    margin-top: 2rem; /* Add some space from the above content */
+    text-align: center; /* Center text content */
+}
+
+.highlighted-text {
+    font-weight: 700;
+    color: var(--highlight-text-color);
+}
+
+.separator {
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.lets-talk-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.button-icon {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.lets-talk-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hire-section {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+        gap: 0.75rem;
+    }
+    
+    .separator {
+        display: none;
+    }
+
+    .lets-talk-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
 }

@@ -1,13 +1,50 @@
 <template>
     <div class="slds-scope">
-        <div class="skills-container slds-p-around_large">
+        <div class="skills-section">
             <div class="slds-text-heading_large slds-m-bottom_large">Skills</div>
             
             <div class="skills-grid">
-                <template for:each={skills} for:item="skill">
-                    <div key={skill.id} class="skill-item">
-                        <i class={skill.icon}></i>
-                        <span class="skill-name">{skill.name}</span>
+                <template for:each={formattedCategories} for:item="category">
+                    <div key={category.id} class="skill-card-wrapper">
+                        <div class="skill-card">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <div class="header-content">
+                                    <template if:true={category.isImageIcon}>
+                                        <img 
+                                            src={category.icon}
+                                            alt={category.title}
+                                            class="category-icon"
+                                        />
+                                    </template>
+                                    <template if:false={category.isImageIcon}>
+                                        <i class={category.icon} data-color={category.iconColor}></i>
+                                    </template>
+                                    <h3 class="category-title">{category.title}</h3>
+                                </div>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="skill-pills">
+                                    <template for:each={category.skills} for:item="skill">
+                                        <div key={skill.name} class="skill-pill">
+                                            <template if:true={skill.isImageIcon}>
+                                                <img 
+                                                    src={skill.icon}
+                                                    alt={skill.name}
+                                                    class="skill-icon"
+                                                />
+                                            </template>
+                                            <template if:false={skill.isImageIcon}>
+                                                <i class={skill.icon} data-color={skill.iconColor}></i>
+                                            </template>
+                                            <span>{skill.name}</span>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </template>
             </div>

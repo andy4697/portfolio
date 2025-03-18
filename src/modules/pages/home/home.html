@@ -1,38 +1,108 @@
 <template>
+    <!-- Main container -->
     <div class="home-container">
-        <!-- INTRO SECTION -->
+        <!-- Intro section -->
         <section class="intro-section">
-            <h1 class="slds-text-heading_large">Hey there 👋</h1>
-            <h2 class="slds-text-heading_medium">I'm Anudeep Appikatla</h2>
-            <h3 class="slds-text-heading_small">5x Salesforce Certified</h3>
-            <p class="intro-text">
-                A passionate Salesforce Developer with 5x certifications who loves creating 
-                innovative solutions and learning new technologies.
-            </p>
-            <div class="slds-m-top_large">
-                <a href="/contact" class="slds-button slds-button_neutral slds-button_compact">Let's talk</a>
+            <h1 class="slds-text-heading_large slds-m-bottom_medium">Hey there 👋</h1>
+            
+            <!-- Content paragraphs -->
+            <div class="slds-text-body_regular slds-m-bottom_large content-paragraphs">
+                <p class="slds-m-bottom_medium">
+                    I'm Anudeep Appikatla—a seasoned Salesforce developer and data enthusiast with over five years of experience designing, building, and optimizing Salesforce solutions for global businesses. With certifications as a Salesforce AI Specialist, Platform Developer, and Administrator, I've led initiatives ranging from custom asset management systems and ERP integrations to extensive data migrations impacting millions of users.
+                </p>
+                
+                <p class="slds-m-bottom_medium">
+                    Throughout my career, I've streamlined procurement workflows, automated complex business processes, and developed interactive dashboards that translate data into strategic insights. I thrive at the intersection of technology and business, consistently delivering solutions that enhance efficiency, accuracy, and user adoption.
+                </p>
+                
+                <p class="slds-m-bottom_medium">
+                    Currently, I'm expanding my technical expertise through a Master's in Information Science at the University of Arizona, specializing in Machine Learning, Neural Networks, and Data Visualization. My recent work includes applied Natural Language Processing and deep learning projects that focus on bias mitigation, NLP applications like offensive language detection, and leveraging models such as RoBERTa for commonsense validation.
+                </p>
+                
+                <p class="slds-m-bottom_medium">
+                    I'm passionate about exploring how emerging technologies like AI and NLP can drive smarter decisions and better user experiences. If you're interested in collaborating or discussing innovative solutions, I'd love to connect!
+                </p>
+
+                <!-- Hire section -->
+                <p class="slds-m-bottom_medium hire-section">
+                    <strong class="highlighted-text">Available for Hire</strong>
+                    <span class="separator">—</span>
+                    <a href="/contact" class="slds-button slds-button_brand lets-talk-button">
+                        Let's talk! <span class="button-icon">→</span>
+                    </a>
+                </p>
+            </div>
+
+            <!-- Trailhead Profile Section -->
+            <div class="trailhead-section slds-m-top_x-large">
+                <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                    <span class="slds-icon_container">
+                        <svg class="slds-icon slds-m-right_x-small" aria-hidden="true">
+                            <use xlink:href="/public/assets/icons/utility-sprite/svg/symbols.svg#trailhead"></use>
+                        </svg>
+                    </span>
+                    Trailhead Profile
+                </h2>
+
+                <!-- Achievement Pills -->
+                <div class="slds-grid slds-grid_align-center slds-wrap achievement-pills">
+                    <div class="slds-pill achievement-pill certified">
+                        <span class="slds-pill__label">
+                            <span class="achievement-icon">📜</span>
+                            <span class="achievement-count">5x</span>
+                            Salesforce Certified
+                        </span>
+                    </div>
+
+                    <div class="slds-pill slds-m-right_x-small achievement-pill points">
+                        <span class="slds-pill__label">
+                            <span class="achievement-icon">⭐</span>
+                            <span class="achievement-count">99,525</span>
+                            Points
+                        </span>
+                    </div>
+                    
+                    <div class="slds-pill slds-m-right_x-small achievement-pill badges">
+                        <span class="slds-pill__label">
+                            <span class="achievement-icon">🎯</span>
+                            <span class="achievement-count">43</span>
+                            Badges
+                        </span>
+                    </div>
+                    
+                    <div class="slds-pill slds-m-right_x-small achievement-pill superbadge">
+                        <span class="slds-pill__label">
+                            <span class="achievement-icon">🏆</span>
+                            <span class="achievement-count">7</span>
+                            Superbadges
+                        </span>
+                    </div>
+                    
+                    <div class="slds-pill achievement-pill mountaineer">
+                        <span class="slds-pill__label">
+                            <img src="/public/assets/mountaineer.png" alt="Mountaineer" class="achievement-icon mountaineer-icon" />
+                            Mountaineer
+                        </span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
+        <!-- Projects section -->
         <section class="section-container">
             <div class="section-header">
                 <h2 class="slds-text-heading_medium">Latest projects</h2>
                 <a href="/projects" class="view-all-link">View all projects →</a>
             </div>
-            
-            <!-- Use the projectsList component with isHomePage attribute -->
             <components-project-list is-home-page="true"></components-project-list>
         </section>
 
-        <!-- LATEST FROM BLOG SECTION -->
+        <!-- Blogs section -->
         <section class="section-container">
             <div class="section-header">
                 <h2 class="slds-text-heading_medium">Latest Blogs</h2>
                 <a href="/blogs" class="view-all-link">View all blogs →</a>
             </div>
-            
-            <!-- Use the blogList component with isHomePage attribute -->
             <components-blog-list is-home-page="true"></components-blog-list>
         </section>
     </div>

@@ -53,7 +53,7 @@
   --pill-green-color: #34a853;
   --pill-green-border: #34a853;
   
-  --pill-orange-bg: rgba(251, 140, 0, 0.15);
+  --pill-orange-bg: #fb8c0026;
   --pill-orange-color: #fb8c00;
   --pill-orange-border: #fb8c00;
   
@@ -64,6 +64,47 @@
   --pill-pink-bg: rgba(233, 30, 99, 0.15);
   --pill-pink-color: #e91e63;
   --pill-pink-border: #e91e63;
+
+  /* Achievement pill colors - light theme */
+  --achievement-superbadge-bg: rgba(255, 143, 0, 0.1);
+  --achievement-superbadge-color: #ff8f00;
+  
+  --achievement-badges-bg: rgba(103, 58, 183, 0.1);
+  --achievement-badges-color: #673ab7;
+  
+  --achievement-points-bg: rgba(76, 175, 80, 0.1);
+  --achievement-points-color: #4caf50;
+  
+  --achievement-mountaineer-bg: rgba(233, 30, 99, 0.1);
+  --achievement-mountaineer-color: #e91e63;
+
+  /* Achievement pill colors - light theme */
+  --achievement-certified-bg: rgba(0, 112, 210, 0.1);
+  --achievement-certified-color: #0070d2;
+
+  /* Trailhead icon color */
+  --trailhead-icon-color: #032d60; /* Salesforce blue for light theme */
+
+  /* Highlight text color */
+  --highlight-text-color: #f43098; /* Green for light theme */
+
+  /* Toast colors - light theme */
+  --toast-success-bg: var(--slds-g-color-success-base-90, #45c65a);
+  --toast-success-text: var(--slds-g-color-success-base-30, #2e844a);
+  
+  --toast-warning-bg: var(--slds-g-color-warning-base-90, #fe9339);
+  --toast-warning-text: var(--slds-g-color-warning-base-30, #bf5a00);
+  
+  --toast-error-bg: var(--slds-g-color-error-base-90, #ea001e);
+  --toast-error-text: var(--slds-g-color-error-base-30, #ba0517);
+  
+  --toast-info-bg: var(--slds-g-color-brand-base-90, #1b96ff);
+  --toast-info-text: var(--slds-g-color-brand-base-30, #0176d3);
+
+  /* Skills section specific variables */
+  --skills-grid-gap: 1rem;
+  --skills-card-padding: 1rem;
+  --skills-pill-gap: 0.5rem;
 }
 
 /* Dark theme variables */
@@ -127,6 +168,45 @@
   --pill-pink-bg: rgba(255, 82, 136, 0.2);
   --pill-pink-color: #ff5288;
   --pill-pink-border: #ff5288;
+  
+  /* Achievement pill colors - dark theme */
+  --achievement-superbadge-bg: rgba(255, 171, 64, 0.2);
+  --achievement-superbadge-color: #ffab40;
+  
+  --achievement-badges-bg: rgba(149, 117, 205, 0.2);
+  --achievement-badges-color: #9575cd;
+  
+  --achievement-points-bg: rgba(129, 199, 132, 0.2);
+  --achievement-points-color: #81c784;
+  
+  --achievement-mountaineer-bg: rgba(240, 98, 146, 0.2);
+  --achievement-mountaineer-color: #f06292;
+
+  /* Achievement pill colors - dark theme */
+  --achievement-certified-bg: rgba(0, 112, 210, 0.2);
+  --achievement-certified-color: #0070d2;
+
+  /* Trailhead icon color */
+  --trailhead-icon-color: #4da1ff; /* Lighter blue for dark theme */
+
+  /* Highlight text color */
+  --highlight-text-color: #f43098; /* Brighter green for dark theme */
+
+  /* Toast colors - dark theme */
+  --toast-success-bg: var(--slds-g-color-success-base-50, #027e46);
+  --toast-success-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-warning-bg: var(--slds-g-color-warning-base-50, #dd7a01);
+  --toast-warning-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-error-bg: var(--slds-g-color-error-base-50, #ea001e);
+  --toast-error-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-info-bg: var(--slds-g-color-brand-base-50, #0176d3);
+  --toast-info-text: var(--slds-g-color-neutral-base-100, #ffffff);
+
+  /* Skills section specific variables */
+  --skills-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 html {

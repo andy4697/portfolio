@@ -2,17 +2,37 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-  }
-  
-  .contact-heading {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-intro {
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
+}
+
+@media (max-width: 968px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .info-card {
+        flex: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+}

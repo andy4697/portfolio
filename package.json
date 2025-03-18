@@ -8,7 +8,7 @@
     "clean": "rm -rf node_modules __lwr_cache__ site",
     "dev": "lwr dev",
     "dev:compat": "lwr dev --mode compat",
-    "build": "lwr build --clean",
+    "build": "lwr build --clean && yarn copyslds",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
     "start": "lwr start",
     "stage": "yarn build && yarn start",
@@ -16,8 +16,10 @@
     "copyslds": "node ./scripts/copy-slds.mjs"
   },
   "dependencies": {
+    "@eschweitzer78/lwrjs-env-module-provider": "^1.0.4",
     "@tailwindcss/cli": "^4.0.9",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
     "font-awesome": "^4.7.0",
     "highlight.js": "^11.11.1",
     "lwc": "latest",

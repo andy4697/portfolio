@@ -154,18 +154,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Animation */
-@keyframes modalFadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-20px) ;
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0) ;
-  }
-}
-
 /* Dark mode adjustments */
 [data-theme="dark"] .modal-content {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);

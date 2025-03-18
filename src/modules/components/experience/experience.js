@@ -4,30 +4,30 @@ export default class Experience extends LightningElement {
     experiences = [
         {
             id: '1',
-            title: 'Job Title at Project or Company Name',
-            startDate: '[Start Date]',
-            endDate: '[End Date]',
-            company: '[Company]',
-            location: '[City], [Country]',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+            company: 'Spayera Constructions',
+            title: 'Senior Software Engineer',
+            startDate: 'May 2022',
+            endDate: 'Jun 2024',
+            location: 'Remote, India',
+            description: 'Designed and delivered a Salesforce-based asset management platform tailored for construction operations, significantly enhancing efficiency in equipment tracking and financial reporting. Also, engineered a custom procurement solution integrated seamlessly with existing ERP systems, providing strategic insights through interactive dashboards.'
         },
         {
             id: '2',
-            title: 'Job Title at Project or Company Name',
-            startDate: '[Start Date]',
-            endDate: '[End Date]',
-            company: '[Company]',
-            location: '[City], [Country]',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+            company: 'Schneider Electric',
+            title: 'Analyst',
+            startDate: 'Jul 2019',
+            endDate: 'Sep 2021',
+            location: 'Bangalore, India',
+            description: 'Pioneered significant process improvements and efficiency through automation and API integrations in Salesforce, achieving measurable reductions in support requests and workflow delays. Spearheaded a major CRM migration project, mentored team members, and successfully introduced organizational frameworks like OKRs to elevate team performance.'
         },
         {
             id: '3',
-            title: 'Job Title at Project or Company Name',
-            startDate: '[Start Date]',
-            endDate: '[End Date]',
-            company: '[Company]',
-            location: '[City], [Country]',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+            company: 'UST Global',
+            title: 'Software Engineering Intern',
+            startDate: 'Feb 2019',
+            endDate: 'Jul 2019',
+            location: 'Chennai, India',
+            description: 'Built predictive analytics models and proposed IoT-driven solutions to improve industrial equipment maintenance processes, leading to substantial cost savings and operational efficiency improvements.'
         }
     ];
 }
