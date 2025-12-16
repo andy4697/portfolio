@@ -1,5 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { config } from 'config/environment';
+import { loadEmailJs, sendEmail } from 'services/emailJsService';
 
 export default class ContactForm extends LightningElement {
     @track formData = {
@@ -23,18 +24,12 @@ export default class ContactForm extends LightningElement {
         contactTemplateId: config.emailJs.contactTemplateId,
         autoReplyTemplateId: config.emailJs.autoReplyTemplateId
     };
+
+    emailJsReadyPromise = null;
+    emailJsReady = false;
     
     connectedCallback() {
-        // Load EmailJS script dynamically
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-        script.async = true;
-        script.onload = () => {
-            window.emailjs.init({
-                publicKey: this.emailJsConfig.publicKey
-            });
-        };
-        document.head.appendChild(script);
+        this.emailJsReadyPromise = this.initializeEmailJs();
     }
     
     handleInputChange(event) {
@@ -62,6 +57,28 @@ export default class ContactForm extends LightningElement {
             return;
         }
         
+        if (!this.emailJsConfig.publicKey || !this.emailJsConfig.serviceId || 
+            !this.emailJsConfig.contactTemplateId || !this.emailJsConfig.autoReplyTemplateId) {
+            this.showToast('error', 'Configuration Error', 'Email service is not configured. Please try again later.');
+            return;
+        }
+
+        try {
+            // Ensure EmailJS is loaded before sending
+            if (!this.emailJsReadyPromise) {
+                this.emailJsReadyPromise = this.initializeEmailJs();
+            }
+            await this.emailJsReadyPromise;
+            if (!this.emailJsReady) {
+                this.showToast('error', 'Error', 'Email service is unavailable. Please try again later.');
+                return;
+            }
+        } catch (loadError) {
+            console.error('EmailJS load error:', loadError);
+            this.showToast('error', 'Error', 'Email service failed to initialize. Please try again later.');
+            return;
+        }
+
         this.formState.isSubmitting = true;
         
         try {
@@ -78,12 +95,12 @@ export default class ContactForm extends LightningElement {
             };
 
             const results = await Promise.all([
-                window.emailjs.send(
+                sendEmail(
                     this.emailJsConfig.serviceId,
                     this.emailJsConfig.contactTemplateId,
                     contactParams
                 ),
-                window.emailjs.send(
+                sendEmail(
                     this.emailJsConfig.serviceId,
                     this.emailJsConfig.autoReplyTemplateId,
                     autoReplyParams
@@ -107,6 +124,16 @@ export default class ContactForm extends LightningElement {
         }
     }
     
+    async initializeEmailJs() {
+        try {
+            await loadEmailJs(this.emailJsConfig.publicKey);
+            this.emailJsReady = true;
+        } catch (error) {
+            this.emailJsReady = false;
+            throw error;
+        }
+    }
+
     validateForm() {
         const errors = {};
         

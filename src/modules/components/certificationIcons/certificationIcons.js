@@ -9,41 +9,41 @@ export default class CertificationIcons extends LightningElement {
             id: 'admin',
             name: 'Salesforce Administrator',
             shortName: 'Administrator',
-            issueDate: 'January 2023',
-            iconUrl: '/public/assets/certificationDetails/admin.png',
-            certificateUrl: '/public/assets/certificationDetails/admin-certificate.png'
+            issueDate: 'March 2021',
+            iconUrl: '/public/assets/certificationDetails/i-admin.png',
+            certificateUrl: '/public/assets/certificationDetails/PlatformAdministrator.png'
         },
         {
             id: 'developer-1',
             name: 'Platform Developer I',
             shortName: 'Developer I',
-            issueDate: 'March 2023',
-            iconUrl: '/public/assets/certificationDetails/platform-developer-1.png',
-            certificateUrl: '/public/assets/certificationDetails/platform-developer-1-certificate.png'
+            issueDate: 'December 2021',
+            iconUrl: '/public/assets/certificationDetails/i-platform-developer-1.png',
+            certificateUrl: '/public/assets/certificationDetails/PlatformDeveloper.png'
         },
         {
             id: 'app-builder',
             name: 'Platform App Builder',
             shortName: 'App Builder',
-            issueDate: 'May 2023',
-            iconUrl: '/public/assets/certificationDetails/app-builder.png',
-            certificateUrl: '/public/assets/certificationDetails/platform-developer-1-certificate.png'
+            issueDate: 'February 2023',
+            iconUrl: '/public/assets/certificationDetails/i-app-builder.png',
+            certificateUrl: '/public/assets/certificationDetails/PlatformAppBuilder.png'
         },
         {
             id: 'developer-2',
             name: 'Platform Developer II',
             shortName: 'Platform Developer II',
-            issueDate: 'July 2023',
-            iconUrl: '/public/assets/certificationDetails/platform-developer-2.png',
-            certificateUrl: '/public/assets/certificationDetails/platform-developer-1-certificate.png'
+            issueDate: 'February 2023',
+            iconUrl: '/public/assets/certificationDetails/i-platform-developer-2.png',
+            certificateUrl: '/public/assets/certificationDetails/PlatformDeveloperII.png'
         },
         {
             id: 'ai-specialist',
             name: 'AI Specialist',
             shortName: 'AI Specialist',
-            issueDate: 'September 2023',
-            iconUrl: '/public/assets/certificationDetails/ai-specialist.png',
-            certificateUrl: '/public/assets/certificationDetails/ai-specialist-certificate.png'
+            issueDate: 'January 2025',
+            iconUrl: '/public/assets/certificationDetails/i-ai-specialist.png',
+            certificateUrl: '/public/assets/certificationDetails/AgentforceSpecialist.png'
         }
     ];
     

@@ -1,0 +1,96 @@
+.certification-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-tabs {
+    background: white;
+    border-radius: 4px;
+}
+
+.certification-tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.certification-tab-content.active {
+    display: block;
+}
+
+.pdf-container {
+    width: 100%;
+    height: 800px;
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pdf-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.certification-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.certification-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 1.5rem;
+}
+
+.certification-details h2 {
+    margin-bottom: 0.5rem;
+}
+
+.certification-date {
+    color: #706e6b;
+}
+
+.tab-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.tab-indicator.admin {
+    background-color: #1589ee;
+}
+
+.tab-indicator.dev {
+    background-color: #6b9ee2;
+}
+
+.tab-indicator.app-builder {
+    background-color: #04844b;
+}
+
+.tab-indicator.service {
+    background-color: #eb7092;
+}
+
+.tab-indicator.experience {
+    background-color: #f88962;
+}
+
+@media (max-width: 768px) {
+    .pdf-container {
+        height: 600px;
+    }
+    
+    .certification-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certification-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

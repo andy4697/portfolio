@@ -1,0 +1,39 @@
+<template>
+    <div class="slds-scope">
+        <div class="certification-container">
+            <div class="slds-text-heading_large slds-m-bottom_medium">My Certifications</div>
+            
+            <div class="slds-tabs_default certification-tabs">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                    <template for:each={certifications} for:item="cert" for:index="index">
+                        <li key={cert.id} class={cert.tabClass} title={cert.name} role="presentation">
+                            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" 
+                               tabindex={cert.tabIndex} aria-selected={cert.selected} 
+                               aria-controls={cert.tabId} id={cert.linkId} 
+                               onclick={handleTabClick} data-id={cert.id}>
+                                <span class={cert.indicatorClass}></span>
+                                {cert.shortName}
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+                
+                <template for:each={certifications} for:item="cert">
+                    <div key={cert.id} id={cert.tabId} class={cert.contentClass} role="tabpanel" aria-labelledby={cert.linkId}>
+                        <div class="certification-info">
+                            <img src={cert.iconPath} alt={cert.name} class="certification-icon">
+                            <div class="certification-details">
+                                <h2 class="slds-text-heading_medium">{cert.name}</h2>
+                                <p class="certification-date">Issued: {cert.issueDate}</p>
+                            </div>
+                        </div>
+                        <div class="pdf-container">
+                            <iframe src={cert.pdfPath} class="pdf-frame" title={cert.name}></iframe>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+        </div>
+    </div>
+</template>
