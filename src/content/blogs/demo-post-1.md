@@ -13,7 +13,7 @@ readingTime: 5
 
 # Getting Started with Lightning Web Components
 
-Lightning Web Components (LWC) is a modern, lightweight framework for building web components in Salesforce. In this guide, we'll explore the basics of LWC and how to create your first component.
+Lightning Web Components (LWC) is a modern, lightweight framework for building web components in Salesforce. In this guide, we'll explore the basics of LWC and how to create your first
 
 ## What are Lightning Web Components?
 
@@ -29,7 +29,7 @@ export default class MyComponent extends LightningElement {
     @api message = 'Hello World';
     
     handleClick() {
-        this.message = 'Button Clicked!';
+        this.message = 'Button';
     }
 }
 ```

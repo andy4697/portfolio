@@ -1,6 +1,7 @@
 import { LightningElement, track } from 'lwc';
 import { config } from 'config/environment';
 import { loadEmailJs, sendEmail } from 'services/emailJsService';
+import { logger } from 'utils/logger';
 
 export default class ContactForm extends LightningElement {
     @track formData = {
@@ -59,7 +60,15 @@ export default class ContactForm extends LightningElement {
         
         if (!this.emailJsConfig.publicKey || !this.emailJsConfig.serviceId || 
             !this.emailJsConfig.contactTemplateId || !this.emailJsConfig.autoReplyTemplateId) {
-            this.showToast('error', 'Configuration Error', 'Email service is not configured. Please try again later.');
+            
+            // Show detailed error only in development
+            const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const debugInfo = isDev ? 
+                `Missing: ${!this.emailJsConfig.publicKey ? 'PublicKey ' : ''}${!this.emailJsConfig.serviceId ? 'ServiceId ' : ''}${!this.emailJsConfig.contactTemplateId ? 'ContactTemplate ' : ''}${!this.emailJsConfig.autoReplyTemplateId ? 'AutoReplyTemplate' : ''}` :
+                '';
+            
+            this.showToast('error', 'Configuration Error', 
+                `Email service is not configured. Please try again later. ${debugInfo}`);
             return;
         }
 
@@ -74,7 +83,7 @@ export default class ContactForm extends LightningElement {
                 return;
             }
         } catch (loadError) {
-            console.error('EmailJS load error:', loadError);
+            logger.error('EmailJS load error:', loadError);
             this.showToast('error', 'Error', 'Email service failed to initialize. Please try again later.');
             return;
         }
@@ -117,7 +126,7 @@ export default class ContactForm extends LightningElement {
                 throw new Error('Failed to send one or more emails');
             }
         } catch (error) {
-            console.error('EmailJS Error:', error);
+            logger.error('EmailJS send failed:', error);
             this.showToast('error', 'Error', 'Failed to send message. Please try again.');
         } finally {
             this.formState.isSubmitting = false;
@@ -239,4 +248,6 @@ export default class ContactForm extends LightningElement {
     get containerClasses() {
         return `form-container ${this.formState.hasToast ? 'show-toast' : ''}`;
     }
+
+
 }

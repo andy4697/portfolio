@@ -1,0 +1,385 @@
+/* Global theme variables */
+:root {
+  /* Base colors */
+  --text-color: #333;
+  --background-color: #fff;
+  --card-background: #fff;
+  --border-color: #d8dde6;
+  --page-background: #fff;
+  
+  /* Brand colors */
+  --primary-color: #0070d2;
+  --secondary-color: #4285f4;
+  
+  /* Timeline colors */
+  --timeline-dot-color: #4285f4;
+  --timeline-line-color: #4285f4;
+  
+  /* Button colors */
+  --button-color: #4285f4;
+  --button-text-color: #fff;
+  
+  /* Theme toggle */
+  --toggle-hover-color: rgba(0, 0, 0, 0.1);
+  --toggle-icon-color: #706e6b;
+  
+  /* Z-index layers */
+  --z-index-sidebar: 100;
+  --z-index-mobile-header: 1000;
+  --z-index-theme-toggle: 1010;
+
+  /* Border radius */
+  --radius: 8px;
+
+   /* Code block colors - light theme */
+   --code-bg: #f5f5f5;
+   --pre-bg: #f5f5f5;
+   --code-color: #333;
+  
+  /* Navigation specific colors */
+  --nav-text-color: #16325c;
+  --nav-hover-bg: #eef1f6;
+  --nav-hover-text: #16325c;
+  --nav-active-bg: #eef5ff;
+  --nav-active-text: #16325c;
+  --nav-active-border: #0070d2;
+
+  /* Pill color variables - light theme */
+  --pill-blue-bg: rgba(66, 133, 244, 0.15);
+  --pill-blue-color: #4285f4;
+  --pill-blue-border: #4285f4;
+  
+  --pill-green-bg: rgba(52, 168, 83, 0.15);
+  --pill-green-color: #34a853;
+  --pill-green-border: #34a853;
+  
+  --pill-orange-bg: #fb8c0026;
+  --pill-orange-color: #fb8c00;
+  --pill-orange-border: #fb8c00;
+  
+  --pill-purple-bg: rgba(103, 58, 183, 0.15);
+  --pill-purple-color: #673ab7;
+  --pill-purple-border: #673ab7;
+  
+  --pill-pink-bg: rgba(233, 30, 99, 0.15);
+  --pill-pink-color: #e91e63;
+  --pill-pink-border: #e91e63;
+
+  /* Achievement pill colors - light theme */
+  --achievement-superbadge-bg: rgba(255, 143, 0, 0.1);
+  --achievement-superbadge-color: #ff8f00;
+  
+  --achievement-badges-bg: rgba(103, 58, 183, 0.1);
+  --achievement-badges-color: #673ab7;
+  
+  --achievement-points-bg: rgba(76, 175, 80, 0.1);
+  --achievement-points-color: #4caf50;
+  
+  --achievement-mountaineer-bg: rgba(233, 30, 99, 0.1);
+  --achievement-mountaineer-color: #e91e63;
+
+  /* Achievement pill colors - light theme */
+  --achievement-certified-bg: rgba(0, 112, 210, 0.1);
+  --achievement-certified-color: #0070d2;
+
+  /* Trailhead icon color */
+  --trailhead-icon-color: #032d60; /* Salesforce blue for light theme */
+
+  /* Highlight text color */
+  --highlight-text-color: #f43098; /* Green for light theme */
+
+  /* Toast colors - light theme */
+  --toast-success-bg: var(--slds-g-color-success-base-90, #45c65a);
+  --toast-success-text: var(--slds-g-color-success-base-30, #2e844a);
+  
+  --toast-warning-bg: var(--slds-g-color-warning-base-90, #fe9339);
+  --toast-warning-text: var(--slds-g-color-warning-base-30, #bf5a00);
+  
+  --toast-error-bg: var(--slds-g-color-error-base-90, #ea001e);
+  --toast-error-text: var(--slds-g-color-error-base-30, #ba0517);
+  
+  --toast-info-bg: var(--slds-g-color-brand-base-90, #1b96ff);
+  --toast-info-text: var(--slds-g-color-brand-base-30, #0176d3);
+
+  /* Skills section specific variables */
+  --skills-grid-gap: 1rem;
+  --skills-card-padding: 1rem;
+  --skills-pill-gap: 0.5rem;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  /* Base colors */
+  --text-color: white;
+  --background-color: #1a1a1a;
+  --card-background: black;
+  --border-color: #444857;
+  --page-background: #1a1a1a;
+  
+  /* Brand colors */
+  --primary-color: #4da1ff;
+  --secondary-color: #5c9aff;
+  
+  /* Timeline colors */
+  --timeline-dot-color: #5c9aff;
+  --timeline-line-color: #5c9aff;
+  
+  /* Button colors */
+  --button-color: #5c9aff;
+  --button-text-color: #fff;
+  
+  /* Theme toggle */
+  --toggle-hover-color: rgba(255, 255, 255, 0.1);
+  --toggle-icon-color: #f3f3f3;
+
+  /* Border radius */
+  --radius: 8px;
+
+  /* Code block colors - dark theme */
+  --code-bg: #2c2c2c;
+  --pre-bg: #2c2c2c;
+  --code-color: #e0e0e0;
+  
+  /* Navigation specific colors for dark theme */
+  --nav-text-color: #e0e0e0;
+  --nav-hover-bg: #2c2c2c;
+  --nav-hover-text: #ffffff;
+  --nav-active-bg: #2c2c2c;
+  --nav-active-text: #ffffff;
+  --nav-active-border: #4da1ff;
+
+  /* Pill color variables - dark theme */
+  --pill-blue-bg: rgba(77, 161, 255, 0.2);
+  --pill-blue-color: #4da1ff;
+  --pill-blue-border: #4da1ff;
+  
+  --pill-green-bg: rgba(75, 211, 105, 0.2);
+  --pill-green-color: #4bd369;
+  --pill-green-border: #4bd369;
+  
+  --pill-orange-bg: rgba(255, 171, 64, 0.2);
+  --pill-orange-color: #ffab40;
+  --pill-orange-border: #ffab40;
+  
+  --pill-purple-bg: rgba(149, 117, 205, 0.2);
+  --pill-purple-color: #9575cd;
+  --pill-purple-border: #9575cd;
+  
+  --pill-pink-bg: rgba(255, 82, 136, 0.2);
+  --pill-pink-color: #ff5288;
+  --pill-pink-border: #ff5288;
+  
+  /* Achievement pill colors - dark theme */
+  --achievement-superbadge-bg: rgba(255, 171, 64, 0.2);
+  --achievement-superbadge-color: #ffab40;
+  
+  --achievement-badges-bg: rgba(149, 117, 205, 0.2);
+  --achievement-badges-color: #9575cd;
+  
+  --achievement-points-bg: rgba(129, 199, 132, 0.2);
+  --achievement-points-color: #81c784;
+  
+  --achievement-mountaineer-bg: rgba(240, 98, 146, 0.2);
+  --achievement-mountaineer-color: #f06292;
+
+  /* Achievement pill colors - dark theme */
+  --achievement-certified-bg: rgba(0, 112, 210, 0.2);
+  --achievement-certified-color: #0070d2;
+
+  /* Trailhead icon color */
+  --trailhead-icon-color: #4da1ff; /* Lighter blue for dark theme */
+
+  /* Highlight text color */
+  --highlight-text-color: #f43098; /* Brighter green for dark theme */
+
+  /* Toast colors - dark theme */
+  --toast-success-bg: var(--slds-g-color-success-base-50, #027e46);
+  --toast-success-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-warning-bg: var(--slds-g-color-warning-base-50, #dd7a01);
+  --toast-warning-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-error-bg: var(--slds-g-color-error-base-50, #ea001e);
+  --toast-error-text: var(--slds-g-color-neutral-base-100, #ffffff);
+  
+  --toast-info-bg: var(--slds-g-color-brand-base-50, #0176d3);
+  --toast-info-text: var(--slds-g-color-neutral-base-100, #ffffff);
+
+  /* Skills section specific variables */
+  --skills-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  overscroll-behavior: none;
+  background-color: var(--page-background);
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Salesforce Sans', Arial, sans-serif;
+  background-color: var(--page-background);
+  color: var(--text-color);
+  overscroll-behavior: none;
+}
+
+/* Layout structure */
+.layout-container {
+  display: flex;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 250px; /* Match sidebar width */
+  padding: 2rem 2rem 0 2rem;
+  min-height: 100vh;
+  background-color: var(--page-background);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* This ensures the main content takes up all available space */
+.content-area > *:not(components-footer) {
+  flex: 1 0 auto;
+  margin-bottom: 2rem;
+}
+
+/* Navigation styles */
+.custom-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--nav-text-color);
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.custom-nav-link:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}
+
+.custom-nav-link[aria-current="page"] {
+  background-color: var(--nav-active-bg);
+  color: var(--nav-active-text);
+  border-left: 3px solid var(--nav-active-border);
+}
+
+/* Remove any horizontal lines */
+hr, 
+.slds-border_top, 
+.slds-border-top, 
+[class*="slds-border_top"], 
+[class*="slds-border-top"],
+.slds-border_bottom, 
+.slds-border-bottom, 
+[class*="slds-border_bottom"], 
+[class*="slds-border-bottom"] {
+  border: none !important;
+}
+
+/* Social links styling */
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--nav-text-color);
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Common button styles */
+.view-all-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease, filter 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.view-all-button:hover {
+  filter: brightness(1.1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-area {
+      margin-left: 0;
+      padding-top: 60px; /* Add space for the fixed mobile header */
+  }
+  
+  .custom-nav-link {
+      padding: 1rem;
+  }
+}
+
+
+/* Card styling */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
