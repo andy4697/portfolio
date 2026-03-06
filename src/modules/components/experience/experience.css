@@ -1,123 +1,183 @@
 .experience-container {
   max-width: 800px;
-  background-color: transparent;
   padding: 2rem;
-  border-radius: 4px;
 }
 
-.company {
-  font-weight: 600;
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--text-color);
+  margin-bottom: 2.5rem;
 }
 
-.job-details {
-  display: flex;
-  align-items: center;
-  color: var(--text-color-weak);
-  font-size: 0.9rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* ── Timeline shell ── */
+.timeline {
+  position: relative;
 }
 
-.title {
-  font-weight: 500;
-}
-
-.separator {
-  color: var(--text-color-weak);
-  opacity: 0.6;
-}
-
-.location {
-  font-style: italic;
-}
-
-.description {
-  margin-top: 0.75rem;
-  color: var(--text-color);
-  line-height: 1.5;
-}
-
-/* Timeline specific styling */
 .timeline-item {
   position: relative;
-  padding-left: 3rem;
+  padding-left: 2.25rem;
+  padding-bottom: 3rem;
 }
 
 /* Vertical line */
-.timeline-item:before {
+.timeline-item:not(:last-child)::before {
   content: '';
   position: absolute;
   left: 7px;
-  top: 6px;
-  height: 100%;
+  top: 8px;
   width: 2px;
+  height: 100%;
   background-color: var(--timeline-line-color);
 }
 
-/* Connect dots with continuous line */
-.timeline-item:not(:last-child):before {
-  height: calc(100% + 6px);
-}
-
-/* Remove line after the last item */
-.timeline-item:last-child:before {
-  height: 0;
-}
-
-/* Dot marker */
+/* Dot */
 .timeline-marker {
   position: absolute;
   left: 0;
-  top: 6px;
+  top: 8px;
   width: 16px;
   height: 16px;
-  background-color: var(--timeline-dot-color);
   border-radius: 50%;
+  background-color: var(--timeline-dot-color);
   z-index: 1;
 }
 
-/* Text styling overrides */
-.experience-container .slds-text-heading_large,
-.experience-container .slds-text-heading_medium {
+/* ── Content area ── */
+.timeline-content {
+  padding-left: 0.75rem;
+}
+
+/* Title — Company */
+.job-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.4;
+}
+
+.job-title {
   color: var(--text-color);
 }
 
-.experience-container .slds-text-body_small {
-  color: var(--text-color);
-  opacity: 0.8;
+.heading-separator {
+  color: var(--text-color-weak);
+  font-weight: 400;
+  margin: 0 0.1rem;
 }
 
-.experience-container .slds-text-body_regular {
-  color: var(--text-color);
+.job-company {
+  color: var(--primary-color);
 }
 
-/* Mobile responsive styles */
+/* Meta line */
+.job-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--text-color-weak);
+  margin-bottom: 1rem;
+}
+
+.meta-dates {
+  font-weight: 500;
+}
+
+.meta-dot {
+  opacity: 0.5;
+}
+
+.meta-location {
+  font-style: italic;
+}
+
+.meta-workmode {
+  font-style: normal;
+}
+
+/* Narrative */
+.job-narrative {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Highlights */
+.highlights-section {
+  margin-top: 0.25rem;
+}
+
+.highlights-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color-weak);
+  margin-bottom: 0.6rem;
+}
+
+.highlights-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlight-item {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+.highlight-item::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .experience-container {
     padding: 1rem;
   }
 
-  .job-details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+  .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
-  .separator {
+  .job-heading {
+    font-size: 1rem;
+  }
+
+  .job-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .meta-dot {
     display: none;
   }
 
-  .title, .dates, .location {
-    width: 100%;
-  }
-
-  .location {
-    color: var(--text-color-weak);
-    font-size: 0.85rem;
-  }
-
-  .description {
-    margin-top: 1rem;
+  .timeline-item {
+    padding-bottom: 2.5rem;
   }
 }

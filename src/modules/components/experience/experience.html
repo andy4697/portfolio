@@ -1,26 +1,45 @@
 <template>
     <div class="slds-scope">
-        <div class="experience-container slds-p-around_large">
-            <div class="slds-text-heading_large slds-m-bottom_large">Experience</div>
+        <div class="experience-container">
+            <div class="section-heading">Experience</div>
 
             <div class="timeline">
                 <template for:each={experiences} for:item="job" for:index="index">
-                    <div key={job.id} class="timeline-item slds-p-bottom_medium">
+                    <div key={job.id} class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="slds-m-bottom_medium">
-                            <div class="company slds-text-heading_medium slds-m-bottom_x-small">
-                                {job.company}
+                        <div class="timeline-content">
+
+                            <!-- Title — Company -->
+                            <h3 class="job-heading">
+                                <span class="job-title">{job.title}</span>
+                                <span class="heading-separator"> — </span>
+                                <span class="job-company">{job.company}</span>
+                            </h3>
+
+                            <!-- Meta: dates · location · workMode -->
+                            <div class="job-meta">
+                                <span class="meta-dates">{job.startDate}<template if:true={job.startDate}> – </template>{job.endDate}</span>
+                                <span class="meta-dot">·</span>
+                                <span class="meta-location">{job.location}</span>
+                                <template if:true={job.workMode}>
+                                    <span class="meta-dot">·</span>
+                                    <span class="meta-workmode">{job.workMode}</span>
+                                </template>
                             </div>
-                            <div class="job-details">
-                                <span class="title">{job.title}</span>
-                                <span class="separator hide-mobile">|</span>
-                                <span class="dates">{job.startDate} - {job.endDate}</span>
-                                <span class="separator hide-mobile">|</span>
-                                <span class="location">{job.location}</span>
+
+                            <!-- Narrative -->
+                            <p class="job-narrative">{job.description}</p>
+
+                            <!-- Highlights -->
+                            <div class="highlights-section">
+                                <span class="highlights-label">Highlights</span>
+                                <ul class="highlights-list">
+                                    <template for:each={job.highlights} for:item="highlight">
+                                        <li key={highlight} class="highlight-item">{highlight}</li>
+                                    </template>
+                                </ul>
                             </div>
-                            <div class="description slds-text-body_regular slds-m-top_small">
-                                {job.description}
-                            </div>
+
                         </div>
                     </div>
                 </template>
