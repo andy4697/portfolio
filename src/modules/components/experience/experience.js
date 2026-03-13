@@ -4,7 +4,7 @@ export default class Experience extends LightningElement {
     experiences = [
         {
             id: '1',
-            company: 'JPMorgan Chase',
+            company: 'CVS Health',
             title: 'Senior Salesforce Developer',
             startDate: '2025',
             endDate: 'Present',
@@ -13,16 +13,16 @@ export default class Experience extends LightningElement {
             description: 'I build enterprise service infrastructure for one of the world\'s largest banks, where reliability, compliance, and performance are non-negotiable. My work focuses on scalable automation, secure integrations, and high-volume service platforms used daily by thousands of agents.',
             highlights: [
                 'Designed intelligent case routing and automated escalation workflows across multi-region service teams — improved SLA compliance from 60% to 95%',
-                'Built KYC/AML compliance workflows with multi-level approvals and full audit trail logging, achieving 100% regulatory compliance',
-                'Integrated core banking systems via REST APIs, CTI, and Platform Events into a unified agent desktop, cutting handling time by 25%',
-                'Delivered 60+ Apex classes and 25+ LWC components at 99.5% uptime and 90%+ test coverage',
-                'Established development standards and mentored 3 junior developers, reducing onboarding time from 4 weeks to 1 week'
+                'Built compliance workflows with multi-level approvals and full audit trail logging, achieving 100% regulatory compliance',
+                'Integrated core enterprisesystems via REST APIs, CTI, and Platform Events into a unified agent desktop, cutting handling time by 25%',
+                'Delivered Apex classes and LWC components at 99.5% uptime and 90%+ test coverage',
+                'Established development standards and mentored 3 junior developers, helped them to understand the codebase and improve their skills'
             ]
         },
         {
             id: '2',
-            company: 'Serveen Software Systems',
-            title: 'Senior Salesforce Developer',
+            company: 'Verizon',
+            title: 'Senior Software Engineer - Salesforce',
             startDate: '2021',
             endDate: '2024',
             location: 'Hyderabad, India',
