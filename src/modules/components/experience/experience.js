@@ -10,30 +10,34 @@ export default class Experience extends LightningElement {
             endDate: 'Present',
             location: 'United States',
             workMode: 'Remote',
-            description: 'I build enterprise service infrastructure for one of the world\'s largest banks, where reliability, compliance, and performance are non-negotiable. My work focuses on scalable automation, secure integrations, and high-volume service platforms used daily by thousands of agents.',
+            description: 'Building enterprise-grade service infrastructure at one of the largest healthcare companies in the US, where reliability, compliance, and performance are non-negotiable. My work spans scalable automation, secure integrations, and high-volume service platforms used daily by thousands of agents.',
             highlights: [
-                'Designed intelligent case routing and automated escalation workflows across multi-region service teams — improved SLA compliance from 60% to 95%',
-                'Built compliance workflows with multi-level approvals and full audit trail logging, achieving 100% regulatory compliance',
-                'Integrated core enterprisesystems via REST APIs, CTI, and Platform Events into a unified agent desktop, cutting handling time by 25%',
-                'Delivered Apex classes and LWC components at 99.5% uptime and 90%+ test coverage',
-                'Established development standards and mentored 3 junior developers, helped them to understand the codebase and improve their skills'
+                'Engineered an Omni-Channel routing framework across voice, chat, email, and case channels using Skills-Based Routing and Presence configurations, boosting agent productivity by 35% and reducing case misrouting by 40%',
+                'Implemented Okta SSO using SAML 2.0 with custom Just-in-Time provisioning and automated attribute mapping, enabling seamless onboarding for 5,000 external portal users and 200 internal users',
+                'Designed an event-driven case escalation engine using Platform Events and Queueable Apex, decoupling high-volume trigger logic and eliminating transaction timeout errors in complex service workflows',
+                'Architected a high-throughput data archiving solution using Batch Apex to process 1M+ case records per execution, enabling recursive component analysis and seamless Odaseva data retention integration',
+                'Developed LWC-based unified Agent Console surfacing real-time account health, entitlement, and case history data via REST API callouts, reducing average handle time by 22%',
+                'Integrated Box for securing sensitive data, reducing security incidents by 30% while ensuring compliance with data protection regulations',
+                'Leveraged Cursor AI with custom rule sets to accelerate development and generate 100+ test classes, maintaining 90%+ Apex code coverage across all releases'
             ]
         },
         {
             id: '2',
             company: 'Verizon',
             title: 'Senior Software Engineer - Salesforce',
-            startDate: 'October 2021',
+            startDate: 'September 2021',
             endDate: 'June 2024',
             location: 'Hyderabad, India',
             workMode: 'Hybrid',
-            description: 'Three years of owning the full lifecycle: design, build, deploy, and iterate. At Serveen, I helped transform how a fast-growing sales org used Salesforce, bringing in smarter automation, cleaner data pipelines, and better tooling for the teams relying on it every day.',
+            description: 'Nearly three years owning the full lifecycle: design, build, deploy, and iterate. At Verizon, I helped modernize how a large-scale sales org leveraged Salesforce, bringing in smarter automation, cleaner data pipelines, and better tooling for the teams relying on it every day.',
             highlights: [
-                'Integrated an AI deal-scoring engine that boosted sales forecast accuracy by 34% across a $45M+ pipeline',
-                'Built 48 custom LWC components for 500+ users, improving page load time by 65% and Lighthouse score from 62 to 89',
-                'Engineered a 10-level quote approval system cutting cycle time by 58% across 1,200+ monthly approvals',
-                'Executed Oracle CPQ integration via bidirectional REST APIs, reducing data discrepancies from 15% to 0.3%',
-                'Constructed a scalable trigger framework across 40+ objects, reducing SOQL queries by 75%'
+                'Integrated the Darwin deal-scoring system into Sales Cloud via web services and surfaced win-rate predictions on an LWC dashboard, improving forecast accuracy by 34%',
+                'Extended the Apex Trigger Handler framework with Map-based SOQL caching and bypass switches, reducing queries per transaction by 75% and enabling large-scale data imports without governor limit failures',
+                'Streamlined 15+ business processes by migrating legacy Process Builders to Flows with reusable sub-flows and bypass logic, eliminating technical debt ahead of Salesforce deprecation',
+                'Supervised migration of 100,000+ records from ERP to Salesforce using MuleSoft and Anypoint Studio, achieving 99% data accuracy with DataWeave ETL workflows',
+                'Improved platform quality and accessibility by raising Clayton score from 35% to 75%, resolving security vulnerabilities via Burp Suite, and guiding the team on WCAG 2.2 guidelines',
+                'Implemented DocuSign eSignature with Salesforce, automating contract workflows and reducing processing time by 30%, resulting in 20% faster deal closures',
+                'Led code reviews and managed CI/CD with Gearset and Bitbucket while maintaining 85%+ Apex test coverage and enterprise deployment standards'
             ]
         },
         {
@@ -44,12 +48,14 @@ export default class Experience extends LightningElement {
             endDate: 'September 2021',
             location: 'Bangalore, India',
             workMode: 'On-site',
-            description: 'My first real taste of enterprise Salesforce — and a crash course in what it takes to build for global scale. At Schneider, I owned integration and migration workstreams that served partner networks spanning over 100 countries. It taught me how to work across complex organizations, communicate with non-technical stakeholders, and take full ownership of what I ship.',
+            description: 'My first real taste of enterprise Salesforce, and a crash course in what it takes to build for global scale. At Schneider, I owned integration and migration workstreams serving partner networks spanning over 100 countries. It taught me how to work across complex organizations, communicate with non-technical stakeholders, and take full ownership of what I ship.',
             highlights: [
-                'Developed 40+ LWC components including Account 360 and Contact 360, integrated with IDMS, Zini, and Box handling 100,000+ annual API calls',
-                'Built a metadata-driven REST API framework serving 5,000+ partner accounts across 120 countries, cutting field config time from 2 weeks to 15 minutes',
-                'Led the Classic-to-Lightning migration, redesigning Visualforce pages as modern LWC components',
-                'Coordinated a 1.2M+ record data migration with 99.5% accuracy, sustaining 98% deployment success across CI/CD pipelines'
+                'Designed and implemented a metadata-driven REST API framework with Custom Objects, Custom Metadata Types, and a dynamic SOQL engine for partner data, cutting new integration deployment from 2 weeks to 15 minutes',
+                'Built an asynchronous partner registration web service to provision identity access including AILs and permission sets on sign-up via Queueable Apex, enabling zero-touch onboarding with no manual IT support',
+                'Owned Account 360 and Contact 360 Lightning Web Components, streamlining IDMS, Zinfi, and Box data into unified partner views during the Classic-to-Lightning migration',
+                'Directed end-to-end migration of 1.2M+ partner loyalty records from Salesforce to Zinfi, collaborating with 5+ cross-functional teams and 50+ stakeholders for UAT, achieving seamless production go-live',
+                'Configured Lightning Flows and multi-tier approval processes for ORF with territory-based routing, auto-approval for low-value deals, and executive escalation for high-value deals',
+                'Served as primary contact for integration and migration workstreams, leading POCs, code/design reviews, and mentoring 5+ interns'
             ]
         },
         {
@@ -57,13 +63,14 @@ export default class Experience extends LightningElement {
             company: 'UST Global',
             title: 'Salesforce Intern',
             startDate: 'February 2019',
-            endDate: 'July2019',
+            endDate: 'July 2019',
             location: 'Chennai, India',
             workMode: 'On-site',
-            description: 'Where it all began. I joined UST Global as an intern and left five months later having contributed to real production work. I wasn\'t just shadowing — I was writing automation, resolving bugs, and shipping alongside the team. It set the standard I\'ve held myself to ever since: get up to speed fast, take initiative, and make yourself useful from day one.',
+            description: 'Where it all began. I joined UST Global as an intern and left five months later having contributed to real production work. I wasn\'t just shadowing; I was writing automation, resolving bugs, and shipping alongside the team. It set the standard I\'ve held myself to ever since: get up to speed fast, take initiative, and make yourself useful from day one.',
             highlights: [
-                'Delivered production-ready Aura components and Visualforce pages with 75%+ Apex test coverage',
-                'Contributed to code reviews and full deployment cycles independently within 8 weeks of joining'
+                'Completed Salesforce platform training with hands-on experience in Administration and Development across Sales Cloud and Service Cloud',
+                'Built and configured custom objects, page layouts, Flows, and Workflow Rules to meet business needs, improving data entry efficiency and streamlining user processes',
+                'Contributed to live projects by assisting with configurations, automation, and bug fixes, independently contributing within 8 weeks of onboarding'
             ]
         }
     ];
