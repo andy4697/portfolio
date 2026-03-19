@@ -4,13 +4,13 @@ export default class Experience extends LightningElement {
     experiences = [
         {
             id: '1',
-            company: 'CVS Health',
+            company: 'General Motors',
             title: 'Senior Salesforce Developer',
             startDate: 'July 2025',
             endDate: 'Present',
             location: 'United States',
             workMode: 'Remote',
-            description: 'Building enterprise-grade service infrastructure at one of the largest healthcare companies in the US, where reliability, compliance, and performance are non-negotiable. My work spans scalable automation, secure integrations, and high-volume service platforms used daily by thousands of agents.',
+            description: 'Building enterprise-grade service infrastructure at one of the largest automotive companies in the US, where reliability, compliance, and performance are non-negotiable. My work spans scalable automation, secure integrations, and high-volume service platforms used daily by thousands of agents.',
             highlights: [
                 'Engineered an Omni-Channel routing framework across voice, chat, email, and case channels using Skills-Based Routing and Presence configurations, boosting agent productivity by 35% and reducing case misrouting by 40%',
                 'Implemented Okta SSO using SAML 2.0 with custom Just-in-Time provisioning and automated attribute mapping, enabling seamless onboarding for 5,000 external portal users and 200 internal users',
